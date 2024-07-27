@@ -19,7 +19,23 @@ export const studySidebarGroup: SidebarGroup[] = [
   {
     text: 'Essentials',
     items: [
-      { text: 'Bootstrap a App', link: '/study/essentials/bootstrap' }
+      {
+        text: 'Bootstrap a App',
+        link: '/study/essentials/bootstrap'
+      },
+      {
+        text: 'Reactivity Fundamentals',
+        link: '/study/essentials/reactivity-fundamentals'
+      },
+      {
+        text: 'Composition API FAQ',
+        link: '/study/essentials/composition-api-faq'
+      },
+      {
+        text: 'Computed Properties',
+        link: '/study/essentials/computed'
+      },
+      { text: 'lasting', link: '/study/essentials/bootstrap' }
     ]
   }
 ]

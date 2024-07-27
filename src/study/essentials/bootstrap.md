@@ -235,7 +235,7 @@ const app = createApp({
 })
 ```
 
-## The Root Component {#the-root-component}
+### The Root Component {#the-root-component}
 
 The object we are passing into `createApp` is in fact a component. Every app requires a "root component" that can contain other components as its children.
 
@@ -249,7 +249,7 @@ import App from './App.vue'
 const app = createApp(App)
 ```
 
-## Mounting the App {#mounting-the-app}
+### Mounting the App {#mounting-the-app}
 
 An application instance won't render anything until its `.mount()` method is called. It expects a **container** argument, which can either be **an actual DOM element or a selector string**:
 
@@ -292,7 +292,7 @@ Vue will automatically use the container's `innerHTML` as the template if the ro
 
 In-DOM templates are often used in applications that are [using Vue without a build step](#using-vue-from-cdn). They can also be used in conjunction with server-side frameworks, where the root template might be generated dynamically by the server.
 
-## App Configurations {#app-configurations}
+### App Configurations {#app-configurations}
 
 The application instance exposes a `.config` object that allows us to configure a few app-level options, for example, defining an app-level error handler that captures errors from all descendant components:
 
@@ -314,7 +314,7 @@ This makes the `TodoDeleteButton` available for use anywhere in our app. You can
 Apply all app configurations before mounting the app!
 :::
 
-## Multiple application instances {#multiple-application-instances}
+### Multiple application instances {#multiple-application-instances}
 
 You are not limited to a single application instance on the same page. The `createApp` API allows multiple Vue applications to co-exist on the same page, each with its own scope for configuration and global assets:
 
