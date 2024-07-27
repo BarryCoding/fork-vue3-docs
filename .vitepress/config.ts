@@ -5,8 +5,10 @@ import type { Config as ThemeConfig } from '@vue/theme'
 import baseConfig from '@vue/theme/config'
 import { headerPlugin } from './headerMdPlugin'
 // import { textAdPlugin } from './textAdMdPlugin'
+import { studyNavItem, studySidebarGroup } from './configStudy'
 
 const nav: ThemeConfig['nav'] = [
+  studyNavItem,
   {
     text: 'Docs',
     activeMatch: `^/(guide|style-guide|cookbook|examples)/`,
@@ -32,106 +34,107 @@ const nav: ThemeConfig['nav'] = [
     text: 'API',
     activeMatch: `^/api/`,
     link: '/api/'
-  },
-  {
-    text: 'Playground',
-    link: 'https://play.vuejs.org'
-  },
-  {
-    text: 'Ecosystem',
-    activeMatch: `^/ecosystem/`,
-    items: [
-      {
-        text: 'Resources',
-        items: [
-          { text: 'Partners', link: '/partners/' },
-          { text: 'Themes', link: '/ecosystem/themes' },
-          { text: 'UI Components', link: 'https://ui-libs.vercel.app/' },
-          {
-            text: 'Certification',
-            link: 'https://certificates.dev/vuejs/?ref=vuejs-nav'
-          },
-          { text: 'Jobs', link: 'https://vuejobs.com/?ref=vuejs' },
-          { text: 'T-Shirt Shop', link: 'https://vue.threadless.com/' }
-        ]
-      },
-      {
-        text: 'Official Libraries',
-        items: [
-          { text: 'Vue Router', link: 'https://router.vuejs.org/' },
-          { text: 'Pinia', link: 'https://pinia.vuejs.org/' },
-          { text: 'Tooling Guide', link: '/guide/scaling-up/tooling.html' }
-        ]
-      },
-      {
-        text: 'Video Courses',
-        items: [
-          {
-            text: 'Vue Mastery',
-            link: 'https://www.vuemastery.com/courses/'
-          },
-          {
-            text: 'Vue School',
-            link: 'https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown'
-          }
-        ]
-      },
-      {
-        text: 'Help',
-        items: [
-          {
-            text: 'Discord Chat',
-            link: 'https://discord.com/invite/HBherRA'
-          },
-          {
-            text: 'GitHub Discussions',
-            link: 'https://github.com/vuejs/core/discussions'
-          },
-          { text: 'DEV Community', link: 'https://dev.to/t/vue' }
-        ]
-      },
-      {
-        text: 'News',
-        items: [
-          { text: 'Blog', link: 'https://blog.vuejs.org/' },
-          { text: 'Twitter', link: 'https://twitter.com/vuejs' },
-          { text: 'Events', link: 'https://events.vuejs.org/' },
-          { text: 'Newsletters', link: '/ecosystem/newsletters' }
-        ]
-      }
-    ]
-  },
-  {
-    text: 'About',
-    activeMatch: `^/about/`,
-    items: [
-      { text: 'FAQ', link: '/about/faq' },
-      { text: 'Team', link: '/about/team' },
-      { text: 'Releases', link: '/about/releases' },
-      {
-        text: 'Community Guide',
-        link: '/about/community-guide'
-      },
-      { text: 'Code of Conduct', link: '/about/coc' },
-      { text: 'Privacy Policy', link: '/about/privacy' },
-      {
-        text: 'The Documentary',
-        link: 'https://www.youtube.com/watch?v=OrxmtDw4pVI'
-      }
-    ]
-  },
-  {
-    text: 'Sponsor',
-    link: '/sponsor/'
-  },
-  {
-    text: 'Partners',
-    link: '/partners/',
-    activeMatch: `^/partners/`
   }
+  // {
+  //   text: 'Playground',
+  //   link: 'https://play.vuejs.org'
+  // },
+  // {
+  //   text: 'Ecosystem',
+  //   activeMatch: `^/ecosystem/`,
+  //   items: [
+  //     {
+  //       text: 'Resources',
+  //       items: [
+  //         { text: 'Partners', link: '/partners/' },
+  //         { text: 'Themes', link: '/ecosystem/themes' },
+  //         { text: 'UI Components', link: 'https://ui-libs.vercel.app/' },
+  //         {
+  //           text: 'Certification',
+  //           link: 'https://certificates.dev/vuejs/?ref=vuejs-nav'
+  //         },
+  //         { text: 'Jobs', link: 'https://vuejobs.com/?ref=vuejs' },
+  //         { text: 'T-Shirt Shop', link: 'https://vue.threadless.com/' }
+  //       ]
+  //     },
+  //     {
+  //       text: 'Official Libraries',
+  //       items: [
+  //         { text: 'Vue Router', link: 'https://router.vuejs.org/' },
+  //         { text: 'Pinia', link: 'https://pinia.vuejs.org/' },
+  //         { text: 'Tooling Guide', link: '/guide/scaling-up/tooling.html' }
+  //       ]
+  //     },
+  //     {
+  //       text: 'Video Courses',
+  //       items: [
+  //         {
+  //           text: 'Vue Mastery',
+  //           link: 'https://www.vuemastery.com/courses/'
+  //         },
+  //         {
+  //           text: 'Vue School',
+  //           link: 'https://vueschool.io/?friend=vuejs&utm_source=Vuejs.org&utm_medium=Link&utm_content=Navbar%20Dropdown'
+  //         }
+  //       ]
+  //     },
+  //     {
+  //       text: 'Help',
+  //       items: [
+  //         {
+  //           text: 'Discord Chat',
+  //           link: 'https://discord.com/invite/HBherRA'
+  //         },
+  //         {
+  //           text: 'GitHub Discussions',
+  //           link: 'https://github.com/vuejs/core/discussions'
+  //         },
+  //         { text: 'DEV Community', link: 'https://dev.to/t/vue' }
+  //       ]
+  //     },
+  //     {
+  //       text: 'News',
+  //       items: [
+  //         { text: 'Blog', link: 'https://blog.vuejs.org/' },
+  //         { text: 'Twitter', link: 'https://twitter.com/vuejs' },
+  //         { text: 'Events', link: 'https://events.vuejs.org/' },
+  //         { text: 'Newsletters', link: '/ecosystem/newsletters' }
+  //       ]
+  //     }
+  //   ]
+  // },
+  // {
+  //   text: 'About',
+  //   activeMatch: `^/about/`,
+  //   items: [
+  //     { text: 'FAQ', link: '/about/faq' },
+  //     { text: 'Team', link: '/about/team' },
+  //     { text: 'Releases', link: '/about/releases' },
+  //     {
+  //       text: 'Community Guide',
+  //       link: '/about/community-guide'
+  //     },
+  //     { text: 'Code of Conduct', link: '/about/coc' },
+  //     { text: 'Privacy Policy', link: '/about/privacy' },
+  //     {
+  //       text: 'The Documentary',
+  //       link: 'https://www.youtube.com/watch?v=OrxmtDw4pVI'
+  //     }
+  //   ]
+  // },
+  // {
+  //   text: 'Sponsor',
+  //   link: '/sponsor/'
+  // },
+  // {
+  //   text: 'Partners',
+  //   link: '/partners/',
+  //   activeMatch: `^/partners/`
+  // }
 ]
 
 export const sidebar: ThemeConfig['sidebar'] = {
+  '/study/': studySidebarGroup,
   '/guide/': [
     {
       text: 'Getting Started',
@@ -637,73 +640,73 @@ export default defineConfigWithTheme<ThemeConfig>({
     // Placeholder of the i18n config for @vuejs-translations.
     // i18n,
 
-    localeLinks: [
-      {
-        link: 'https://cn.vuejs.org',
-        text: '简体中文',
-        repo: 'https://github.com/vuejs-translations/docs-zh-cn'
-      },
-      {
-        link: 'https://ja.vuejs.org',
-        text: '日本語',
-        repo: 'https://github.com/vuejs-translations/docs-ja'
-      },
-      {
-        link: 'https://ua.vuejs.org',
-        text: 'Українська',
-        repo: 'https://github.com/vuejs-translations/docs-uk'
-      },
-      {
-        link: 'https://fr.vuejs.org',
-        text: 'Français',
-        repo: 'https://github.com/vuejs-translations/docs-fr'
-      },
-      {
-        link: 'https://ko.vuejs.org',
-        text: '한국어',
-        repo: 'https://github.com/vuejs-translations/docs-ko'
-      },
-      {
-        link: 'https://pt.vuejs.org',
-        text: 'Português',
-        repo: 'https://github.com/vuejs-translations/docs-pt'
-      },
-      {
-        link: 'https://bn.vuejs.org',
-        text: 'বাংলা',
-        repo: 'https://github.com/vuejs-translations/docs-bn'
-      },
-      {
-        link: 'https://it.vuejs.org',
-        text: 'Italiano',
-        repo: 'https://github.com/vuejs-translations/docs-it'
-      },
-      {
-        link: 'https://fa.vuejs.org',
-        text: 'فارسی',
-        repo: 'https://github.com/vuejs-translations/docs-fa'
-      },
-      {
-        link: 'https://ru.vuejs.org',
-        text: 'Русский',
-        repo: 'https://github.com/translation-gang/docs-ru'
-      },
-      {
-        link: 'https://cs.vuejs.org',
-        text: 'Čeština',
-        repo: 'https://github.com/vuejs-translations/docs-cs'
-      },
-      {
-        link: 'https://zh-hk.vuejs.org',
-        text: '繁體中文',
-        repo: 'https://github.com/vuejs-translations/docs-zh-hk'
-      },
-      {
-        link: '/translations/',
-        text: 'Help Us Translate!',
-        isTranslationsDesc: true
-      }
-    ],
+    // localeLinks: [
+    //   {
+    //     link: 'https://cn.vuejs.org',
+    //     text: '简体中文',
+    //     repo: 'https://github.com/vuejs-translations/docs-zh-cn'
+    //   },
+    //   {
+    //     link: 'https://ja.vuejs.org',
+    //     text: '日本語',
+    //     repo: 'https://github.com/vuejs-translations/docs-ja'
+    //   },
+    //   {
+    //     link: 'https://ua.vuejs.org',
+    //     text: 'Українська',
+    //     repo: 'https://github.com/vuejs-translations/docs-uk'
+    //   },
+    //   {
+    //     link: 'https://fr.vuejs.org',
+    //     text: 'Français',
+    //     repo: 'https://github.com/vuejs-translations/docs-fr'
+    //   },
+    //   {
+    //     link: 'https://ko.vuejs.org',
+    //     text: '한국어',
+    //     repo: 'https://github.com/vuejs-translations/docs-ko'
+    //   },
+    //   {
+    //     link: 'https://pt.vuejs.org',
+    //     text: 'Português',
+    //     repo: 'https://github.com/vuejs-translations/docs-pt'
+    //   },
+    //   {
+    //     link: 'https://bn.vuejs.org',
+    //     text: 'বাংলা',
+    //     repo: 'https://github.com/vuejs-translations/docs-bn'
+    //   },
+    //   {
+    //     link: 'https://it.vuejs.org',
+    //     text: 'Italiano',
+    //     repo: 'https://github.com/vuejs-translations/docs-it'
+    //   },
+    //   {
+    //     link: 'https://fa.vuejs.org',
+    //     text: 'فارسی',
+    //     repo: 'https://github.com/vuejs-translations/docs-fa'
+    //   },
+    //   {
+    //     link: 'https://ru.vuejs.org',
+    //     text: 'Русский',
+    //     repo: 'https://github.com/translation-gang/docs-ru'
+    //   },
+    //   {
+    //     link: 'https://cs.vuejs.org',
+    //     text: 'Čeština',
+    //     repo: 'https://github.com/vuejs-translations/docs-cs'
+    //   },
+    //   {
+    //     link: 'https://zh-hk.vuejs.org',
+    //     text: '繁體中文',
+    //     repo: 'https://github.com/vuejs-translations/docs-zh-hk'
+    //   },
+    //   {
+    //     link: '/translations/',
+    //     text: 'Help Us Translate!',
+    //     isTranslationsDesc: true
+    //   }
+    // ],
 
     algolia: {
       indexName: 'vuejs',
@@ -714,21 +717,21 @@ export default defineConfigWithTheme<ThemeConfig>({
       }
     },
 
-    carbonAds: {
-      code: 'CEBDT27Y',
-      placement: 'vuejsorg'
-    },
+    // carbonAds: {
+    //   code: 'CEBDT27Y',
+    //   placement: 'vuejsorg'
+    // },
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/' },
-      { icon: 'twitter', link: 'https://twitter.com/vuejs' },
-      { icon: 'discord', link: 'https://discord.com/invite/vue' }
-    ],
+    // socialLinks: [
+    //   { icon: 'github', link: 'https://github.com/vuejs/' },
+    //   { icon: 'twitter', link: 'https://twitter.com/vuejs' },
+    //   { icon: 'discord', link: 'https://discord.com/invite/vue' }
+    // ],
 
-    editLink: {
-      repo: 'vuejs/docs',
-      text: 'Edit this page on GitHub'
-    },
+    // editLink: {
+    //   repo: 'vuejs/docs',
+    //   text: 'Edit this page on GitHub'
+    // },
 
     footer: {
       license: {
