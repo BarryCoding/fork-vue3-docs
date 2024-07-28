@@ -35,6 +35,18 @@ export const studySidebarGroup: SidebarGroup[] = [
         text: 'Computed Properties',
         link: '/study/essentials/computed'
       },
+      {
+        text: 'Template Syntax',
+        link: '/study/essentials/template-syntax'
+      },
+      {
+        text: 'Rendering List',
+        link: '/study/essentials/list'
+      },
+      {
+        text: 'Rendering Conditionally',
+        link: '/study/essentials/conditional'
+      },
       { text: 'lasting', link: '/study/essentials/bootstrap' }
     ]
   }

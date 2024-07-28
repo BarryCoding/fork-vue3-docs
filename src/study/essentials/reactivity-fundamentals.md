@@ -4,6 +4,10 @@ outline: deep
 
 # Reactivity Fundamentals {#reactivity-fundamentals}
 
+:::tip Professional Tips
+Many experienced Vue.js developers define reactive data exclusively with ref() due to the limitations of reactive()
+:::
+
 ## Declaring Reactive State \*\* {#declaring-reactive-state}
 
 ### `ref()` \*\* {#ref}
@@ -283,7 +287,3 @@ The `reactive()` API has a few limitations:
    // we have to pass the entire object in to retain reactivity
    callSomeFunction(state.count)
    ```
-:::danger ref() Only
-Due to these limitations, we recommend using `ref()` as the **primary**(exclusive) API for declaring reactive state.
-:::
-
