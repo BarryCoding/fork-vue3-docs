@@ -47,6 +47,10 @@ export const studySidebarGroup: SidebarGroup[] = [
         text: 'Rendering Conditionally',
         link: '/study/essentials/conditional'
       },
+      {
+        text: 'Event Handling',
+        link: '/study/essentials/event-handling'
+      },
       { text: 'lasting', link: '/study/essentials/bootstrap' }
     ]
   }
