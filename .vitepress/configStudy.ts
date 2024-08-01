@@ -55,7 +55,19 @@ export const studySidebarGroup: SidebarGroup[] = [
         text: 'Class and Style Bindings',
         link: '/study/essentials/class-and-style'
       },
-      { text: 'lasting', link: '/study/essentials/bootstrap' }
+      {
+        text: 'Form Input Bindings',
+        link: '/study/essentials/forms'
+      }
+    ]
+  },
+  {
+    text: 'Components',
+    items: [
+      {
+        text: 'Component Basics',
+        link: '/study/components/component-basics'
+      }
     ]
   }
 ]
