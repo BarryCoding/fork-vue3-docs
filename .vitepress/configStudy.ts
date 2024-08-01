@@ -51,6 +51,10 @@ export const studySidebarGroup: SidebarGroup[] = [
         text: 'Event Handling',
         link: '/study/essentials/event-handling'
       },
+      {
+        text: 'Class and Style Bindings',
+        link: '/study/essentials/class-and-style'
+      },
       { text: 'lasting', link: '/study/essentials/bootstrap' }
     ]
   }
