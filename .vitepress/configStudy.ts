@@ -75,6 +75,10 @@ export const studySidebarGroup: SidebarGroup[] = [
       {
         text: 'Lifecycle Hooks',
         link: '/study/components/lifecycle'
+      },
+      {
+        text: 'Slots',
+        link: '/study/components/slots'
       }
     ]
   }
