@@ -92,6 +92,10 @@ export const studySidebarGroup: SidebarGroup[] = [
       {
         text: 'Watchers',
         link: '/study/intermediate/watchers'
+      },
+      {
+        text: 'Template Refs',
+        link: '/study/intermediate/template-refs'
       }
     ]
   }
