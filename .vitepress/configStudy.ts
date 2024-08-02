@@ -67,6 +67,14 @@ export const studySidebarGroup: SidebarGroup[] = [
       {
         text: 'Component Basics',
         link: '/study/components/component-basics'
+      },
+      {
+        text: 'Single-File Components',
+        link: '/study/components/sfc'
+      },
+      {
+        text: 'Lifecycle Hooks',
+        link: '/study/components/lifecycle'
       }
     ]
   }
