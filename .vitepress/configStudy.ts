@@ -79,6 +79,10 @@ export const studySidebarGroup: SidebarGroup[] = [
       {
         text: 'Slots',
         link: '/study/components/slots'
+      },
+      {
+        text: 'Async Components',
+        link: '/study/components/async'
       }
     ]
   }
