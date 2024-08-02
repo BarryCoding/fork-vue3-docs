@@ -85,5 +85,14 @@ export const studySidebarGroup: SidebarGroup[] = [
         link: '/study/components/async'
       }
     ]
+  },
+  {
+    text: 'Intermediate',
+    items: [
+      {
+        text: 'Watchers',
+        link: '/study/intermediate/watchers'
+      }
+    ]
   }
 ]
