@@ -18,10 +18,20 @@ export const studyNavItem: NavItem = {
       ]
     },
     {
-      text: 'Senior Vue Developer',
+      text: 'Ecosystem',
       items: [
-        { text: 'Essentials', link: '/study/essentials/bootstrap' },
-        { text: 'Components', link: '/study/components/component-basics' }
+        { text: 'Vue Router', link: 'https://github.com/vuejs/router' },
+        { text: 'VueUse', link: 'https://github.com/vueuse/vueuse' },
+        {
+          text: 'Vue Devtools',
+          link: 'https://github.com/vuejs/devtools-next'
+        },
+        { text: 'Vuetify', link: 'https://github.com/vuetifyjs/vuetify' },
+        {
+          text: 'VS Code Extension',
+          link: 'https://github.com/vuejs/language-tools'
+        },
+        { text: 'Nuxt', link: 'https://github.com/nuxt/nuxt' }
       ]
     }
   ]
@@ -120,6 +130,15 @@ export const studySidebarGroup: SidebarGroup[] = [
       {
         text: 'Plugins',
         link: '/study/intermediate/plugins'
+      }
+    ]
+  },
+  {
+    text: 'Ecosystem',
+    items: [
+      {
+        text: 'Vue Router',
+        link: '/study/ecosystem/vue-router'
       }
     ]
   }
