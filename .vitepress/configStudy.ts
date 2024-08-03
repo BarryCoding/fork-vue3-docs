@@ -136,6 +136,10 @@ export const studySidebarGroup: SidebarGroup[] = [
       {
         text: 'Plugins',
         link: '/study/intermediate/plugins'
+      },
+      {
+        text: 'Custom Directives',
+        link: '/study/intermediate/custom-directives'
       }
     ]
   },
