@@ -116,6 +116,10 @@ export const studySidebarGroup: SidebarGroup[] = [
       {
         text: 'TransitionGroup',
         link: '/study/intermediate/transition-group'
+      },
+      {
+        text: 'Plugins',
+        link: '/study/intermediate/plugins'
       }
     ]
   }
