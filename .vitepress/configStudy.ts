@@ -20,17 +20,19 @@ export const studyNavItem: NavItem = {
     {
       text: 'Ecosystem',
       items: [
+        {
+          text: 'VS Code Extension',
+          link: 'https://github.com/vuejs/language-tools'
+        },
         { text: 'Vue Router', link: 'https://github.com/vuejs/router' },
+        { text: 'Pinia', link: 'https://github.com/vuejs/pinia' },
         { text: 'VueUse', link: 'https://github.com/vueuse/vueuse' },
         {
           text: 'Vue Devtools',
           link: 'https://github.com/vuejs/devtools-next'
         },
         { text: 'Vuetify', link: 'https://github.com/vuetifyjs/vuetify' },
-        {
-          text: 'VS Code Extension',
-          link: 'https://github.com/vuejs/language-tools'
-        },
+
         { text: 'Nuxt', link: 'https://github.com/nuxt/nuxt' }
       ]
     }
@@ -62,6 +64,10 @@ export const studySidebarGroup: SidebarGroup[] = [
         link: '/study/essentials/template-syntax'
       },
       {
+        text: 'Class and Style Bindings',
+        link: '/study/essentials/class-and-style'
+      },
+      {
         text: 'Rendering List',
         link: '/study/essentials/list'
       },
@@ -72,10 +78,6 @@ export const studySidebarGroup: SidebarGroup[] = [
       {
         text: 'Event Handling',
         link: '/study/essentials/event-handling'
-      },
-      {
-        text: 'Class and Style Bindings',
-        link: '/study/essentials/class-and-style'
       },
       {
         text: 'Form Input Bindings',
@@ -105,6 +107,10 @@ export const studySidebarGroup: SidebarGroup[] = [
       {
         text: 'Async Components',
         link: '/study/components/async'
+      },
+      {
+        text: 'Component v-model',
+        link: '/study/components/v-model'
       }
     ]
   },
