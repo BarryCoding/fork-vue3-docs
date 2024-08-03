@@ -7,11 +7,23 @@ export const studyNavItem: NavItem = {
   text: 'Study',
   activeMatch: `^/study/`,
   items: [
-    { text: 'Essentials', link: '/study/essentials/bootstrap' }
-    // { text: 'Components', link: '/study/components' },
-    // { text: 'Intermediate', link: '/study/intermediate' },
-    // { text: 'Ecosystem', link: '/study/ecosystem' },
-    // { text: 'Challenge', link: '/study/challenge' }
+    {
+      text: 'Junior Vue Developer',
+      items: [
+        { text: 'Essentials', link: '/study/essentials/bootstrap' },
+        { text: 'Components', link: '/study/components/component-basics' },
+        { text: 'Intermediate', link: '/study/intermediate/watchers' }
+        // { text: 'Ecosystem', link: '/study/ecosystem' },
+        // { text: 'Challenge', link: '/study/challenge' }
+      ]
+    },
+    {
+      text: 'Senior Vue Developer',
+      items: [
+        { text: 'Essentials', link: '/study/essentials/bootstrap' },
+        { text: 'Components', link: '/study/components/component-basics' }
+      ]
+    }
   ]
 }
 
@@ -96,6 +108,14 @@ export const studySidebarGroup: SidebarGroup[] = [
       {
         text: 'Template Refs',
         link: '/study/intermediate/template-refs'
+      },
+      {
+        text: 'Transition',
+        link: '/study/intermediate/transition'
+      },
+      {
+        text: 'TransitionGroup',
+        link: '/study/intermediate/transition-group'
       }
     ]
   }
