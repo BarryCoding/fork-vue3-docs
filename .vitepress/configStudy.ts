@@ -4,24 +4,22 @@ import type {
 } from '@vue/theme/src/vitepress/config.js'
 
 export const studyNavItem: NavItem = {
-  text: 'Study',
+  text: 'Junior',
   activeMatch: `^/study/`,
   items: [
     {
-      text: 'Junior Vue Developer',
+      text: 'Junior Developer',
       items: [
         { text: 'Essentials', link: '/study/essentials/bootstrap' },
         { text: 'Components', link: '/study/components/component-basics' },
         { text: 'Intermediate', link: '/study/intermediate/watchers' }
-        // { text: 'Ecosystem', link: '/study/ecosystem' },
-        // { text: 'Challenge', link: '/study/challenge' }
       ]
     },
     {
       text: 'Ecosystem',
       items: [
         {
-          text: 'VS Code Extension',
+          text: 'IDE Extension',
           link: 'https://github.com/vuejs/language-tools'
         },
         { text: 'Vue Router', link: 'https://github.com/vuejs/router' },
@@ -142,13 +140,58 @@ export const studySidebarGroup: SidebarGroup[] = [
         link: '/study/intermediate/custom-directives'
       }
     ]
-  },
+  }
+  // {
+  //   text: 'Ecosystem',
+  //   items: [
+  //     {
+  //       text: 'Vue Router',
+  //       link: '/study/ecosystem/vue-router'
+  //     }
+  //   ]
+  // }
+]
+
+export const seniorNavItem: NavItem = {
+  text: 'Senior',
+  activeMatch: `^/senior/`,
+  items: [
+    {
+      text: 'Senior Developer',
+      items: [
+        {
+          text: 'Advanced Component',
+          link: '/senior/components/v-model'
+        }
+      ]
+    }
+  ]
+}
+
+export const seniorSidebarGroup: SidebarGroup[] = [
   {
-    text: 'Ecosystem',
+    text: 'Advanced Components',
     items: [
       {
-        text: 'Vue Router',
-        link: '/study/ecosystem/vue-router'
+        text: 'v-model',
+        link: '/senior/components/v-model'
+      },
+      {
+        text: 'props',
+        link: '/senior/components/props'
+      }
+    ]
+  },
+  {
+    text: 'Typescript',
+    items: [
+      {
+        text: 'Overview',
+        link: '/senior/typescript/overview'
+      },
+      {
+        text: 'Recipe',
+        link: '/senior/typescript/composition-api'
       }
     ]
   }

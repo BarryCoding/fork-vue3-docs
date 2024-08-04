@@ -5,10 +5,16 @@ import type { Config as ThemeConfig } from '@vue/theme'
 import baseConfig from '@vue/theme/config'
 import { headerPlugin } from './headerMdPlugin'
 // import { textAdPlugin } from './textAdMdPlugin'
-import { studyNavItem, studySidebarGroup } from './configStudy'
+import {
+  studyNavItem,
+  studySidebarGroup,
+  seniorNavItem,
+  seniorSidebarGroup
+} from './configStudy'
 
 const nav: ThemeConfig['nav'] = [
   studyNavItem,
+  seniorNavItem,
   {
     text: 'Docs',
     activeMatch: `^/(guide|style-guide|cookbook|examples)/`,
@@ -135,6 +141,7 @@ const nav: ThemeConfig['nav'] = [
 
 export const sidebar: ThemeConfig['sidebar'] = {
   '/study/': studySidebarGroup,
+  '/senior/': seniorSidebarGroup,
   '/guide/': [
     {
       text: 'Getting Started',
