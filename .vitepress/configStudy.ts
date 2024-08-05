@@ -95,6 +95,10 @@ export const studySidebarGroup: SidebarGroup[] = [
         link: '/study/components/sfc'
       },
       {
+        text: 'Ex Registration',
+        link: '/study/components/registration'
+      },
+      {
         text: 'Lifecycle Hooks',
         link: '/study/components/lifecycle'
       },
@@ -105,10 +109,6 @@ export const studySidebarGroup: SidebarGroup[] = [
       {
         text: 'Async Components',
         link: '/study/components/async'
-      },
-      {
-        text: 'Component v-model',
-        link: '/study/components/v-model'
       }
     ]
   },
@@ -183,6 +183,11 @@ export const seniorSidebarGroup: SidebarGroup[] = [
       {
         text: 'Events',
         link: '/senior/components/events'
+      },
+
+      {
+        text: 'Ex Fallthrough Attributes',
+        link: '/senior/components/attrs'
       },
       {
         text: 'v-model',
