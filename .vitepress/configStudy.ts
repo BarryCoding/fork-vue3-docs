@@ -162,6 +162,10 @@ export const seniorNavItem: NavItem = {
         {
           text: 'Advanced Component',
           link: '/senior/components/v-model'
+        },
+        {
+          text: 'Typescript',
+          link: '/senior/typescript/overview'
         }
       ]
     }
@@ -179,6 +183,10 @@ export const seniorSidebarGroup: SidebarGroup[] = [
       {
         text: 'props',
         link: '/senior/components/props'
+      },
+      {
+        text: 'Provide / Inject',
+        link: '/senior/components/provide-inject'
       }
     ]
   },
