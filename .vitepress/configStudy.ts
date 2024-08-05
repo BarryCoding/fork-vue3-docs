@@ -177,12 +177,16 @@ export const seniorSidebarGroup: SidebarGroup[] = [
     text: 'Advanced Components',
     items: [
       {
-        text: 'v-model',
-        link: '/senior/components/v-model'
+        text: 'Props',
+        link: '/senior/components/props'
       },
       {
-        text: 'props',
-        link: '/senior/components/props'
+        text: 'Events',
+        link: '/senior/components/events'
+      },
+      {
+        text: 'v-model',
+        link: '/senior/components/v-model'
       },
       {
         text: 'Provide / Inject',

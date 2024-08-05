@@ -277,8 +277,6 @@ import type { ComponentPublicInstance } from 'vue'
 const child = ref<ComponentPublicInstance | null>(null)
 ```
 
-<!-- TODO: -->
-
 ## Typing Provide / Inject {#typing-provide-inject}
 
 Provide and inject are usually performed in separate components. To properly type injected values, Vue provides an `InjectionKey` interface, which is a generic type that extends `Symbol`. It can be used to sync the type of the injected value between the provider and the consumer:
@@ -294,7 +292,9 @@ provide(key, 'foo') // providing non-string value will result in error
 const foo = inject(key) // type of foo: string | undefined
 ```
 
+:::tip
 It's recommended to place the injection key in a separate file so that it can be imported in multiple components.
+:::
 
 When using string injection keys, the type of the injected value will be `unknown`, and needs to be explicitly declared via a generic type argument:
 
