@@ -196,6 +196,10 @@ export const seniorSidebarGroup: SidebarGroup[] = [
       {
         text: 'Provide / Inject',
         link: '/senior/components/provide-inject'
+      },
+      {
+        text: 'Rendering Mechanism',
+        link: '/senior/components/rendering-mechanism'
       }
     ]
   },
