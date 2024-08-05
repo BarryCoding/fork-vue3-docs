@@ -7,19 +7,25 @@ import { VTCodeGroup, VTCodeGroupTab } from '@vue/theme'
 ## Creating a Vue Application {#creating-a-vue-application}
 
 :::tip Prerequisites
-- Familiarity with the command line
-- Install [Node.js](https://nodejs.org/) version 18.3 or higher
+Install [Node.js](https://nodejs.org/) version 18.3 or higher
 :::
 
 In this section we will introduce how to scaffold a Vue [Single Page Application](/guide/extras/ways-of-using-vue#single-page-application-spa) on your local machine. The created project will be using a build setup based on [Vite](https://vitejs.dev) and allow us to use Vue [Single-File Components](/guide/scaling-up/sfc) (SFCs).
 
-Run the following command in your command line (without the `$` sign):
+Run the following command:
 
 <VTCodeGroup>
+  <VTCodeGroupTab label="pnpm">
+
+  ```sh
+  pnpm create vue@latest
+  ```
+
+  </VTCodeGroupTab>
   <VTCodeGroupTab label="npm">
 
   ```sh
-  $ npm create vue@latest
+  npm create vue@latest
   ```
 
   </VTCodeGroupTab>
@@ -44,12 +50,12 @@ This command will install and execute [create-vue](https://github.com/vuejs/crea
 Once the project is created, install dependencies and start the dev server:
 
 <VTCodeGroup>
-  <VTCodeGroupTab label="npm">
+  <VTCodeGroupTab label="pnpm">
 
-  ```sh-vue
-  $ cd {{'<your-project-name>'}}
-  $ npm install
-  $ npm run dev
+  ```sh
+  cd your-project-name
+  pnpm install
+  pnpm run dev
   ```
 
   </VTCodeGroupTab>
@@ -60,15 +66,15 @@ Note that the example components in the generated project are written using the 
 - IDE setup [Visual Studio Code](https://code.visualstudio.com/) + [Vue - Official extension](https://marketplace.visualstudio.com/items?itemName=Vue.volar).
 - [Tooling Guide](/guide/scaling-up/tooling).
 - [Vite docs](https://vitejs.dev).
-- [TypeScript Usage Guide](typescript/overview).
+- [TypeScript Usage Guide](/senior/typescript/overview).
 
 Ship your app to production:
 
 <VTCodeGroup>
-  <VTCodeGroupTab label="npm">
+  <VTCodeGroupTab label="pnpm">
 
   ```sh
-  $ npm run build
+  $ pnpm run build
   ```
 
   </VTCodeGroupTab>
@@ -111,7 +117,8 @@ The above link loads the _global build_ of Vue, where all top-level APIs are exp
 ```
 
 :::tip
-Many of the examples for Composition API throughout the guide will be using the `<script setup>` syntax, which requires build tools. If you intend to use Composition API without a build step, consult the usage of the [`setup()` option](/api/composition-api-setup).
+Many of the examples for Composition API throughout the guide will be using the `<script setup>` syntax, which requires build tools.  
+If you intend to use Composition API without a build step, consult the usage of the [`setup()` option](/api/composition-api-setup).
 :::
 
 
@@ -261,9 +268,14 @@ An application instance won't render anything until its `.mount()` method is cal
 app.mount('#app')
 ```
 
-The content of the app's root component will be rendered inside the container element. **The container element itself is not considered part of the app**.
+The content of the app's root component will be rendered inside the container element. 
 
-The `.mount()` method should always be called **after** all app configurations and asset registrations are done. Also note that its **return value**, unlike the asset registration methods, **is the root component instance** instead of the application instance.
+:::danger
+- **The container element itself is not considered part of the app**.  
+- The `.mount()` method should always be called **after** all app configurations and asset registrations are done.  
+- The `.mount()` **return value**, unlike the asset registration methods, **is the root component instance** instead of the application instance.
+:::
+
 
 ### In-DOM Root Component Template {#in-dom-root-component-template}
 
@@ -310,7 +322,7 @@ app.component('TodoDeleteButton', TodoDeleteButton)
 
 This makes the `TodoDeleteButton` available for use anywhere in our app. You can also browse the full list of application instance APIs in its [API reference](/api/application).
 
-:::danger Make sure
+:::danger Repeat
 Apply all app configurations before mounting the app!
 :::
 
