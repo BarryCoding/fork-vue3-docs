@@ -4,11 +4,7 @@ outline: deep
 
 # Template Syntax {#template-syntax}
 
-Vue uses an HTML-based template syntax that allows you to declaratively bind the rendered DOM to the underlying component instance's data. All Vue templates are syntactically valid HTML that can be parsed by spec-compliant browsers and HTML parsers.
-
 Under the hood, Vue compiles the templates into highly-optimized JavaScript code. Combined with the reactivity system, Vue can intelligently figure out the minimal number of components to re-render and apply the minimal amount of DOM manipulations when the app state changes.
-
-If you are familiar with Virtual DOM concepts and prefer the raw power of JavaScript, you can also [directly write render functions](/guide/extras/render-function) instead of templates, with optional JSX support. However, do note that they do not enjoy the same level of compile-time optimizations as templates.
 
 ## Text Interpolation {#text-interpolation}
 
@@ -36,7 +32,7 @@ The double mustaches interpret the data as plain text, not HTML. In order to out
   <p>Using v-html directive: <span v-html="rawHtml"></span></p>
 </div>
 
-Here we're encountering something new. The `v-html` attribute you're seeing is called a **directive**. Directives are prefixed with `v-` to indicate that they are special attributes provided by Vue, and as you may have guessed, they apply special reactive behavior to the rendered DOM. Here, we're basically saying "keep this element's inner HTML up-to-date with the `rawHtml` property on the current active instance."
+The `v-html` attribute is called a **directive**. Directives are prefixed with `v-` to indicate that they are special attributes provided by Vue, and as you may have guessed, they apply special reactive behavior to the rendered DOM. Here, we're basically saying "keep this element's inner HTML up-to-date with the `rawHtml` property on the current active instance."
 
 The contents of the `span` will be replaced with the value of the `rawHtml` property, interpreted as plain HTML - data bindings are ignored. Note that you cannot use `v-html` to compose template partials, because Vue is not a string-based templating engine. Instead, components are preferred as the fundamental unit for UI reuse and composition.
 
@@ -46,13 +42,17 @@ Dynamically rendering arbitrary HTML on your website can be very dangerous becau
 
 ## Attribute Bindings {#attribute-bindings}
 
-Mustaches cannot be used inside HTML attributes. Instead, use a [`v-bind` directive](/api/built-in-directives#v-bind):
+use a [`v-bind` directive](/api/built-in-directives#v-bind):
 
 ```vue-html
 <div v-bind:id="dynamicId"></div>
 ```
 
-The `v-bind` directive instructs Vue to keep the element's `id` attribute in sync with the component's `dynamicId` property. If the bound value is `null` or `undefined`, then the attribute will be removed from the rendered element.
+The `v-bind` directive instructs Vue to keep the element's `id` attribute in sync with the component's `dynamicId` property. 
+
+:::tip
+If the bound value is `null` or `undefined`, then the attribute will be removed from the rendered element.
+:::
 
 ### Shorthand {#shorthand}
 
@@ -73,8 +73,6 @@ If the attribute has the same name with the JavaScript value being bound, the sy
 <!-- this also works -->
 <div v-bind:id></div>
 ```
-
-This is similar to the property shorthand syntax when declaring objects in JavaScript. Note this is a feature that is only available in **Vue 3.4** and above.
 
 ### Boolean Attributes {#boolean-attributes}
 
@@ -108,7 +106,7 @@ You can bind them to a single element by using `v-bind` without an argument:
 
 ## Using JavaScript Expressions {#using-javascript-expressions}
 
-So far we've only been binding to simple property keys in our templates. But Vue actually supports the full power of JavaScript expressions inside all data bindings:
+Vue supports the full power of JavaScript expressions inside all data bindings:
 
 ```vue-html
 {{ number + 1 }}
@@ -129,9 +127,10 @@ In Vue templates, JavaScript expressions can be used in the following positions:
 
 ### Expressions Only {#expressions-only}
 
-Each binding can only contain **one single expression**. An expression is **a piece of code that can be evaluated to a value**. 
+Each binding can only contain **one single expression**. 
 
 :::tip
+An expression is **a piece of code that can be evaluated to a value**.  
 A simple check is whether it can be used after `return`.
 :::
 
@@ -156,7 +155,7 @@ It is possible to call a component-exposed method inside a binding expression:
 ```
 
 :::warning
-Functions called inside binding expressions will be called every time the component updates, so they should **not** have any side effects, such as changing data or triggering asynchronous operations.
+Functions called inside binding expressions will be called every time the component updates, so they should **not** have any **side effects**, such as changing data or triggering asynchronous operations.
 :::
 
 ### Restricted Globals Access {#restricted-globals-access}
@@ -167,7 +166,7 @@ Globals not explicitly included in the list, for example user-attached propertie
 
 ## Directives {#directives}
 
-Directives are special attributes with the `v-` prefix. Vue provides a number of [built-in directives](/api/built-in-directives), including `v-html` and `v-bind` which we have introduced above.
+Directives are special attributes with the `v-` prefix. Vue provides a number of [built-in directives](/api/built-in-directives)
 
 Directive attribute values are expected to be single JavaScript expressions (with the exception of `v-for`, `v-on` and `v-slot`). A directive's job is to reactively apply updates to the DOM when the value of its expression changes. Take [`v-if`](/api/built-in-directives#v-if) as an example:
 
@@ -203,7 +202,7 @@ Here, the argument is the event name to listen to: `click`. `v-on` has a corresp
 
 ### Dynamic Arguments {#dynamic-arguments}
 
-It is also possible to use a JavaScript expression in a directive argument by wrapping it with square brackets:
+It is also possible to use a JavaScript expression in a directive argument by wrapping it with square brackets`[]`:
 
 ```vue-html
 <a v-bind:[attributeName]="url"> ... </a>

@@ -2,7 +2,7 @@
 
 ## `v-if` {#v-if}
 
-The directive `v-if` is used to conditionally render a block. The block will only be rendered if the directive's expression returns a **truthy** value.
+The directive `v-if` is used to conditionally render a block.
 
 ```vue-html
 <h1 v-if="awesome">Vue is awesome!</h1>
@@ -79,7 +79,7 @@ Another option for conditionally displaying an element is the `v-show` directive
 <h1 v-show="ok">Hello!</h1>
 ```
 
-:::tip
+:::danger
 The difference is that an element with `v-show` will always be rendered and remain in the DOM; `v-show` only toggles the `display` CSS property of the element.
 
 `v-show` **doesn't support** the `<template>` element, nor does it work with `v-else`.

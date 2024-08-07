@@ -37,22 +37,7 @@ const items = [{ message: 'Foo' }, { message: 'Bar' }]
   </li>
 </div>
 
-The variable scoping of `v-for` is similar to the following JavaScript:
-
-```js
-const parentMessage = 'Parent'
-const items = [
-  /* ... */
-]
-
-items.forEach((item, index) => {
-  // has access to outer scope `parentMessage`
-  // but `item` and `index` are only available in here
-  console.log(parentMessage, item.message, index)
-})
-```
-
-Notice how the `v-for` value matches the function signature of the `forEach` callback. In fact, you can use **destructuring** on the `v-for` item alias similar to destructuring function arguments:
+you can use **destructuring** on the `v-for` item alias similar to destructuring function arguments:
 
 ```vue-html
 <li v-for="{ message } in items">
@@ -75,11 +60,16 @@ For nested `v-for`, scoping also works similar to nested functions. Each `v-for`
 </li>
 ```
 
+<details>
+<summary>item of items</summary>
+
 You can also use `of` as the delimiter instead of `in`, so that it is closer to JavaScript's syntax for iterators:
 
 ```vue-html
 <div v-for="item of items"></div>
 ```
+
+</details>
 
 ## `v-for` with an Object {#v-for-with-an-object}
 
@@ -111,7 +101,7 @@ You can also provide a second alias for the property's name (a.k.a. key):
 
 And third alias for the index:
 
-```vue-html
+```vue-html {1}
 <li v-for="(value, key, index) in myObject">
   {{ index }}. {{ key }}: {{ value }}
 </li>
@@ -190,13 +180,11 @@ When using `<template v-for>`, the `key` should be placed on the `<template>` co
 </template>
 ```
 
-:::tip Note
-`key` here is a special attribute being bound with `v-bind`. It should not be confused with the property key variable when [using `v-for` with an object](#v-for-with-an-object).
-:::
-
-[It is recommended](/style-guide/rules-essential#use-keyed-v-for) to provide a `key` attribute with `v-for` whenever possible, unless the iterated DOM content is simple (i.e. contains no components or stateful DOM elements), or you are intentionally relying on the default behavior for performance gains.
+:::tip
+[It is recommended](/style-guide/rules-essential#use-keyed-v-for) to provide a `key` attribute with `v-for` whenever possible.
 
 The `key` binding expects **primitive values** - i.e. strings and numbers. Do not use objects as `v-for` keys. For detailed usage of the `key` attribute, please see the [`key` API documentation](/api/built-in-special-attributes#key).
+:::
 
 ## `v-for` with a Component {#v-for-with-a-component}
 
@@ -217,8 +205,6 @@ However, this won't automatically pass any data to the component, because compon
 />
 ```
 
-The reason for not automatically injecting `item` into the component is because that makes the component tightly coupled to how `v-for` works. Being explicit about where its data comes from makes the component reusable in other situations.
-
 ## Array Change Detection {#array-change-detection}
 
 ### Mutation Methods {#mutation-methods}
@@ -235,7 +221,7 @@ Vue is able to detect when a reactive array's mutation methods are called and tr
 
 ### Replacing an Array {#replacing-an-array}
 
-Mutation methods, as the name suggests, mutate the original array they are called on. In comparison, there are also non-mutating methods, e.g. `filter()`, `concat()` and `slice()`, which do not mutate the original array but **always return a new array**. When working with non-mutating methods, we should replace the old array with the new one:
+Mutation methods, as the name suggests, mutate the original array they are called on. In comparison, there are also non-mutating methods, e.g. `filter()`, `concat()` and `slice()`, which do not mutate the original array but **always return a new array**. When working with non-mutating methods, we should **replace** the old array with the new one:
 
 ```js
 // `items` is a ref with array value
@@ -279,9 +265,11 @@ function even(numbers) {
 </ul>
 ```
 
+:::danger
 Be careful with `reverse()` and `sort()` in a computed property! These two methods will mutate the original array, which should be avoided in computed getters. Create a copy of the original array before calling these methods:
 
 ```diff
 - return numbers.reverse()
 + return [...numbers].reverse()
 ```
+:::

@@ -39,19 +39,19 @@ export const studyNavItem: NavItem = {
 
 export const studySidebarGroup: SidebarGroup[] = [
   {
-    text: 'Essentials',
+    text: 'Essentials 2nd',
     items: [
       {
         text: 'Bootstrap a App',
         link: '/study/essentials/bootstrap'
       },
       {
-        text: 'Reactivity Fundamentals',
-        link: '/study/essentials/reactivity-fundamentals'
-      },
-      {
         text: 'Composition API FAQ',
         link: '/study/essentials/composition-api-faq'
+      },
+      {
+        text: 'Reactivity Fundamentals',
+        link: '/study/essentials/reactivity-fundamentals'
       },
       {
         text: 'Computed Properties',
@@ -66,12 +66,12 @@ export const studySidebarGroup: SidebarGroup[] = [
         link: '/study/essentials/class-and-style'
       },
       {
-        text: 'Rendering List',
-        link: '/study/essentials/list'
-      },
-      {
         text: 'Rendering Conditionally',
         link: '/study/essentials/conditional'
+      },
+      {
+        text: 'Rendering List',
+        link: '/study/essentials/list'
       },
       {
         text: 'Event Handling',
@@ -200,6 +200,12 @@ export const seniorSidebarGroup: SidebarGroup[] = [
       {
         text: 'Rendering Mechanism',
         link: '/senior/components/rendering-mechanism'
+      },
+
+      // Deeper Dive section: reactivity in depth, rending fn
+      {
+        text: 'Render Function & JSX',
+        link: '/senior/components/render-function'
       }
     ]
   },

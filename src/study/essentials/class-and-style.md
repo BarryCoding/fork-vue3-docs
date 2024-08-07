@@ -4,11 +4,11 @@ outline: deep
 
 # Class and Style Bindings {#class-and-style-bindings}
 
-A common need for data binding is manipulating an element's class list and inline styles. Since `class` and `style` are both attributes, we can use `v-bind` to assign them a string value dynamically, much like with other attributes. However, trying to generate those values using string concatenation can be annoying and error-prone. For this reason, Vue provides special enhancements when `v-bind` is used with `class` and `style`. In addition to strings, the expressions can also evaluate to objects or arrays.
+A common need for data binding is manipulating an element's class list and inline styles. Since `class` and `style` are both attributes, we can use `v-bind` to assign them a string value dynamically, much like with other attributes. In addition to strings, the expressions can also evaluate to objects or arrays.
 
 ## Binding HTML Classes {#binding-html-classes}
 
-### Binding to Objects {#binding-to-objects}
+### to Objects {#binding-to-objects}
 
 We can pass **an object** to `:class` to dynamically toggle classes:
 
@@ -40,9 +40,7 @@ It will render:
 <div class="static active"></div>
 ```
 
-When `isActive` or `hasError` changes, the class list will be updated accordingly. For example, if `hasError` becomes `true`, the class list will become `"static active text-danger"`.
-
-The bound object doesn't have to be inline:
+The bound object can be reactive:
 
 ```js
 const classObject = reactive({
@@ -77,7 +75,7 @@ const classObject = computed(() => ({
 <div :class="classObject"></div>
 ```
 
-### Binding to Arrays {#binding-to-arrays}
+### to Arrays {#binding-to-arrays}
 
 We can bind `:class` to an array to apply a list of classes:
 
@@ -104,7 +102,7 @@ If you would like to also toggle a class in the list conditionally, you can do i
 
 This will always apply `errorClass`, but `activeClass` will only be applied when `isActive` is truthy.
 
-However, this can be a bit verbose if you have multiple conditional classes. That's why it's also possible to use the **object syntax inside** the array syntax:
+It's also possible to use the **object syntax inside** the array syntax:
 
 ```vue-html
 <div :class="[{ [activeClass]: isActive }, errorClass]"></div>
@@ -114,7 +112,7 @@ However, this can be a bit verbose if you have multiple conditional classes. Tha
 
 When you use the `class` attribute on a component with a single root element, those classes will be added to the component's **root element** and merged with any existing class already on it.
 
-For example, if we have a component named `MyComponent` with the following template:
+For example:
 
 ```vue-html
 <!-- child component template -->
@@ -203,7 +201,7 @@ Again, object style binding is often used in conjunction with **computed propert
 
 ### Binding to Arrays {#binding-to-arrays-1}
 
-We can bind `:style` to an array of multiple style objects. These objects will be merged and applied to the same element:
+We can bind `:style` to an array of multiple style objects. These objects will be **merged** and applied to the same element:
 
 ```vue-html
 <div :style="[baseStyles, overridingStyles]"></div>
@@ -212,13 +210,3 @@ We can bind `:style` to an array of multiple style objects. These objects will b
 ### Auto-prefixing {#auto-prefixing}
 
 When you use a CSS property that requires a [vendor prefix](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) in `:style`, Vue will automatically add the appropriate prefix. Vue does this by checking at runtime to see which style properties are supported in the current browser. If the browser doesn't support a particular property then various prefixed variants will be tested to try to find one that is supported.
-
-### Multiple Values {#multiple-values}
-
-You can provide an array of multiple (prefixed) values to a style property, for example:
-
-```vue-html
-<div :style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
-```
-
-This will only render the last value in the array which the browser supports. In this example, it will render `display: flex` for browsers that support the unprefixed version of flexbox.
