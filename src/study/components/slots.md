@@ -34,20 +34,6 @@ And the final rendered DOM:
 
 With slots, the `<FancyButton>` is responsible for rendering the outer `<button>` (and its fancy styling), while the inner content is provided by the parent component.
 
-Another way to understand slots is by comparing them to JavaScript functions:
-
-```js
-// parent component passing slot content
-FancyButton('Click me!')
-
-// FancyButton renders slot content in its own template
-function FancyButton(slotContent) {
-  return `<button class="fancy-btn">
-      ${slotContent}
-    </button>`
-}
-```
-
 Slot content is not just limited to text. It can be any valid template content. For example, we can pass in multiple elements, or even other components:
 
 ```vue-html
@@ -59,7 +45,7 @@ Slot content is not just limited to text. It can be any valid template content. 
 
 By using slots, our `<FancyButton>` is more flexible and reusable. We can now use it in different places with different inner content, but all with the same fancy styling.
 
-Vue components' slot mechanism is inspired by the [native Web Component `<slot>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot), but with additional capabilities that we will see later.
+Vue components' slot mechanism is inspired by the [native Web Component `<slot>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot)
 
 ## Render Scope {#render-scope}
 
@@ -155,7 +141,9 @@ For these cases, the `<slot>` element has a special attribute, `name`, which can
 </div>
 ```
 
+:::tip
 A `<slot>` outlet without `name` implicitly has the name "default".
+:::
 
 In a parent component using `<BaseLayout>`, we need a way to pass multiple slot content fragments, each targeting a different slot outlet. This is where **named slots** come in.
 
@@ -227,26 +215,6 @@ Now everything inside the `<template>` elements will be passed to the correspond
     <p>Here's some contact info</p>
   </footer>
 </div>
-```
-
-Again, it may help you understand named slots better using the JavaScript function analogy:
-
-```js
-// passing multiple slot fragments with different names
-BaseLayout({
-  header: `...`,
-  default: `...`,
-  footer: `...`
-})
-
-// <BaseLayout> renders them in different places
-function BaseLayout(slots) {
-  return `<div class="container">
-      <header>${slots.header}</header>
-      <main>${slots.default}</main>
-      <footer>${slots.footer}</footer>
-    </div>`
-}
 ```
 
 ## Conditional Slots {#conditional-slots}
@@ -323,27 +291,6 @@ Receiving the slot props is a bit different when using a single default slot vs.
 <!-- https://www.figma.com/file/QRneoj8eIdL1kw3WQaaEyc/scoped-slot -->
 
 The props passed to the slot by the child are available as the value of the corresponding `v-slot` directive, which can be accessed by expressions inside the slot.
-
-You can think of a scoped slot as a function being passed into the child component. The child component then calls it, passing props as arguments:
-
-```js
-MyComponent({
-  // passing the default slot, but as a function
-  default: (slotProps) => {
-    return `${slotProps.text} ${slotProps.count}`
-  }
-})
-
-function MyComponent(slots) {
-  const greetingMessage = 'hello'
-  return `<div>${
-    // call the slot function with props!
-    slots.default({ text: greetingMessage, count: 1 })
-  }</div>`
-}
-```
-
-In fact, this is very close to how scoped slots are compiled, and how you would use scoped slots in manual [render functions](/guide/extras/render-function).
 
 Notice how `v-slot="slotProps"` matches the slot function signature. Just like with function arguments, we can use destructuring in `v-slot`:
 

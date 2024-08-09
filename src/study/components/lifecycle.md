@@ -44,4 +44,4 @@ Below is a diagram for the instance lifecycle.
 
 Consult the [Lifecycle Hooks API reference](/api/composition-api-lifecycle) for details on all lifecycle hooks and their respective use cases.
 
-TODO: Composition API Lifecycle Hooks
+- 
