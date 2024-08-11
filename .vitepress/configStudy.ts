@@ -41,6 +41,7 @@ export const studySidebarGroup: SidebarGroup[] = [
   {
     text: 'Essentials 2nd',
     items: [
+      { text: 'Overview', link: '/study/overview' },
       {
         text: 'Bootstrap a App',
         link: '/study/essentials/bootstrap'
@@ -184,7 +185,6 @@ export const seniorSidebarGroup: SidebarGroup[] = [
         text: 'Events',
         link: '/senior/components/events'
       },
-
       {
         text: 'Ex Fallthrough Attributes',
         link: '/senior/components/attrs'
