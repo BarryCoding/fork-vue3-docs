@@ -162,6 +162,34 @@ If you specify a generic type argument but omit the initial value, the resulting
 const n = ref<number>()
 ```
 
+## Typing `reactive()` {#typing-reactive}
+
+`reactive()` also implicitly infers the type from its argument:
+
+```ts
+import { reactive } from 'vue'
+
+// inferred type: { title: string }
+const book = reactive({ title: 'Vue 3 Guide' })
+```
+
+To explicitly type a `reactive` property, we can use interfaces:
+
+```ts
+import { reactive } from 'vue'
+
+interface Book {
+  title: string
+  year?: number
+}
+
+const book: Book = reactive({ title: 'Vue 3 Guide' })
+```
+
+:::warning
+It's **not recommended to use the generic** argument of `reactive()` because the returned type, which handles nested ref unwrapping, is different from the generic argument type.
+:::
+
 ## Typing `computed()` {#typing-computed}
 
 `computed()` infers its type based on the getter's return value:

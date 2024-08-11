@@ -10,9 +10,7 @@ While Vue's declarative rendering model abstracts away most of the direct DOM op
 
 ## Accessing the Refs {#accessing-the-refs}
 
-To obtain the reference with Composition API, we need to declare a ref with a name that matches the template ref attribute's value:
-
-```vue
+```vue {6,14}
 <script setup>
 import { ref, onMounted } from 'vue'
 
@@ -30,20 +28,6 @@ onMounted(() => {
 </template>
 ```
 
-If not using `<script setup>`, make sure to also return the ref from `setup()`:
-
-```js{6}
-export default {
-  setup() {
-    const input = ref(null)
-    // ...
-    return {
-      input
-    }
-  }
-}
-```
-
 Note that you can only access the ref **after the component is mounted.** If you try to access `input` in a template expression, it will be `null` on the first render. This is because the element doesn't exist until after the first render!
 
 If you are trying to watch the changes of a template ref, make sure to account for the case where the ref has `null` value:
@@ -57,8 +41,6 @@ watchEffect(() => {
   }
 })
 ```
-
-See also: [Typing Template Refs](/guide/typescript/composition-api#typing-template-refs) <sup class="vt-badge ts" />
 
 ## Refs inside `v-for` {#refs-inside-v-for}
 
@@ -123,10 +105,8 @@ onMounted(() => {
 </template>
 ```
 
-If the child component is using Options API or not using `<script setup>`, the referenced instance will be identical to the child component's `this`, which means the parent component will have full access to every property and method of the child component. This makes it easy to create tightly coupled implementation details between the parent and the child, so component refs should be only used when absolutely needed - in most cases, you should try to implement parent / child interactions using the standard props and emit interfaces first.
-
 :::tip
-An exception here is that components using `<script setup>` are **private by default**: a parent component referencing a child component using `<script setup>` won't be able to access anything unless the child component chooses to expose a public interface using the `defineExpose` macro:
+components using `<script setup>` are **private by default**: a parent component referencing a child component using `<script setup>` won't be able to access anything unless the child component chooses to expose a public interface using the `defineExpose` macro:
 :::
 
 ```vue
@@ -146,4 +126,4 @@ defineExpose({
 
 When a parent gets an instance of this component via template refs, the retrieved instance will be of the shape `{ a: number, b: number }` (refs are automatically unwrapped just like on normal instances).
 
-See also: [Typing Component Template Refs](/guide/typescript/composition-api#typing-component-template-refs) <sup class="vt-badge ts" />
+See also: [Typing Component Template Refs](/senior/typescript/composition-api#typing-component-template-refs) <sup class="vt-badge ts" />

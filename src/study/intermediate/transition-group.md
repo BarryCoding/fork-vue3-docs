@@ -20,10 +20,6 @@ import ListStagger from './transition-demos/ListStagger.vue'
 
 - CSS transition classes will be applied to individual elements in the list, **not** to the group / container itself.
 
-:::tip
-When used in [in-DOM templates](/guide/essentials/component-basics#in-dom-template-parsing-caveats), it should be referenced as `<transition-group>`.
-:::
-
 ## Enter / Leave Transitions {#enter-leave-transitions}
 
 Here is an example of applying enter / leave transitions to a `v-for` list using `<TransitionGroup>`:

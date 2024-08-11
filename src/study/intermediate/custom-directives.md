@@ -37,22 +37,6 @@ Assuming you haven't clicked elsewhere on the page, the input above should be au
 
 In `<script setup>`, any camelCase variable that starts with the `v` prefix can be used as a custom directive. In the example above, `vFocus` can be used in the template as `v-focus`.
 
-If not using `<script setup>`, custom directives can be registered using the `directives` option:
-
-```js
-export default {
-  setup() {
-    /*...*/
-  },
-  directives: {
-    // enables v-focus in template
-    focus: {
-      /* ... */
-    }
-  }
-}
-```
-
 It is also common to globally register custom directives at the app level:
 
 ```js
@@ -65,7 +49,7 @@ app.directive('focus', {
 ```
 
 :::tip
-Custom directives **should only be used** when the desired functionality can only be achieved via direct DOM manipulation. Prefer declarative templating using built-in directives such as `v-bind` when possible because they are more efficient and server-rendering friendly.
+Custom directives **should only be used** when the desired functionality **can only be** achieved via direct DOM manipulation. Prefer declarative templating using built-in directives such as `v-bind` when possible because they are more efficient and server-rendering friendly.
 :::
 
 ## Directive Hooks {#directive-hooks}
@@ -179,7 +163,6 @@ app.directive('demo', (el, binding) => {
 :::warning Not recommended
 Using custom directives on components is not recommended. Unexpected behavior may occur when a component has multiple root nodes.
 :::
-
 
 When used on components, custom directives will **always** apply to a component's **root node**, similar to [Fallthrough Attributes](/guide/components/attrs).
 
