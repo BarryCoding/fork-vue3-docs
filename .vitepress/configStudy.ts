@@ -196,20 +196,6 @@ export const seniorSidebarGroup: SidebarGroup[] = [
       {
         text: 'Provide / Inject',
         link: '/senior/components/provide-inject'
-      },
-      {
-        text: 'Rendering Mechanism',
-        link: '/senior/components/rendering-mechanism'
-      },
-
-      // Deeper Dive section: reactivity in depth, rending fn
-      {
-        text: 'Render Function & JSX',
-        link: '/senior/components/render-function'
-      },
-      {
-        text: 'Render Function API',
-        link: '/senior/components/render-function-copy'
       }
     ]
   },
@@ -223,6 +209,37 @@ export const seniorSidebarGroup: SidebarGroup[] = [
       {
         text: 'Recipe',
         link: '/senior/typescript/composition-api'
+      }
+    ]
+  },
+  {
+    text: 'Best Practice',
+    items: [
+      {
+        text: 'Composable',
+        link: '/senior/best/composables'
+      },
+      {
+        text: 'Utilities API',
+        link: '/senior/best/reactivity-utilities'
+      }
+    ]
+  },
+  {
+    text: 'Deeper Dive',
+    items: [
+      // reactivity in depth
+      {
+        text: 'Rendering Mechanism',
+        link: '/senior/components/rendering-mechanism'
+      },
+      {
+        text: 'Render Function & JSX',
+        link: '/senior/components/render-function'
+      },
+      {
+        text: 'Render Function API',
+        link: '/senior/components/render-function-copy'
       }
     ]
   }
