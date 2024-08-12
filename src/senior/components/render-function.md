@@ -6,8 +6,6 @@ outline: deep
 
 Vue recommends using templates to build applications in the vast majority of cases. However, there are situations where we need the full programmatic power of JavaScript. That's where we can use the **render function**.
 
-> If you are new to the concept of virtual DOM and render functions, make sure to read the [Rendering Mechanism](/guide/extras/rendering-mechanism) chapter first.
-
 ## Basic Usage {#basic-usage}
 
 ### Creating Vnodes {#creating-vnodes}
@@ -135,8 +133,6 @@ function Hello() {
 }
 ```
 
-That's right, this is a valid Vue component! See [Functional Components](#functional-components) for more details on this syntax.
-
 ### Vnodes Must Be Unique {#vnodes-must-be-unique}
 
 All vnodes in the component tree must be unique. That means the following render function is invalid:
@@ -179,7 +175,7 @@ Inside JSX expressions, use curly braces to embed dynamic values:
 const vnode = <div id={dynamicId}>hello, {userName}</div>
 ```
 
-`create-vue` and Vue CLI both have options for scaffolding projects with pre-configured JSX support. If you are configuring JSX manually, please refer to the documentation of [`@vue/babel-plugin-jsx`](https://github.com/vuejs/jsx-next) for details.
+`create-vue` and Vue CLI both have options for scaffolding projects with pre-configured JSX support.
 
 Although first introduced by React, JSX actually has no defined runtime semantics and can be compiled into various different outputs. If you have worked with JSX before, do note that **Vue JSX transform is different from React's JSX transform**, so you can't use React's JSX transform in Vue applications. Some notable differences from React JSX include:
 
@@ -453,6 +449,16 @@ Passing slots as functions allows them to be invoked lazily by the child compone
 To render a scoped slot in the parent component, a slot is passed to the child. Notice how the slot now has a parameter `text`. The slot will be called in the child component and the data from the child component will be passed up to the parent component.
 
 ```js
+// child component
+export default {
+  setup(props, { slots }) {
+    const text = ref('hi')
+    return () => h('div', null, slots.default({ text: text.value }))
+  }
+}
+```
+
+```js
 // parent component
 export default {
   setup() {
@@ -464,16 +470,6 @@ export default {
 ```
 
 Remember to pass `null` so the slots will not be treated as props.
-
-```js
-// child component
-export default {
-  setup(props, { slots }) {
-    const text = ref('hi')
-    return () => h('div', null, slots.default({ text: text.value }))
-  }
-}
-```
 
 JSX equivalent:
 

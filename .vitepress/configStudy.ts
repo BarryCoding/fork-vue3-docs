@@ -206,6 +206,10 @@ export const seniorSidebarGroup: SidebarGroup[] = [
       {
         text: 'Render Function & JSX',
         link: '/senior/components/render-function'
+      },
+      {
+        text: 'Render Function API',
+        link: '/senior/components/render-function-copy'
       }
     ]
   },
