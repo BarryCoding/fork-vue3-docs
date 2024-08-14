@@ -167,6 +167,10 @@ export const seniorNavItem: NavItem = {
         {
           text: 'Typescript',
           link: '/senior/typescript/overview'
+        },
+        {
+          text: 'Best Practice',
+          link: '/senior/best/composables'
         }
       ]
     }
@@ -222,6 +226,10 @@ export const seniorSidebarGroup: SidebarGroup[] = [
       {
         text: 'Utilities API',
         link: '/senior/best/reactivity-utilities'
+      },
+      {
+        text: 'State Management',
+        link: '/senior/best/state-management'
       }
     ]
   },
