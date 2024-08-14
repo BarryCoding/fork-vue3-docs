@@ -254,6 +254,10 @@ export const seniorSidebarGroup: SidebarGroup[] = [
       {
         text: 'Performance',
         link: '/senior/best/performance'
+      },
+      {
+        text: 'Security',
+        link: '/senior/best/security'
       }
     ]
   },
