@@ -270,6 +270,10 @@ export const seniorSidebarGroup: SidebarGroup[] = [
     items: [
       // reactivity in depth
       {
+        text: 'Reactivity In Depth',
+        link: '/senior/best/reactivity-in-depth'
+      },
+      {
         text: 'Rendering Mechanism',
         link: '/senior/components/rendering-mechanism'
       },
