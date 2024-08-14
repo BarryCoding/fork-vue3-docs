@@ -1,5 +1,7 @@
 # Security {#security}
 
+Application security should be a top priority for the Vue developer. To be considered a Senior Vue dev, you should be familiar with the potential risks associated with misuse of the framework and know how to avoid these pitfalls.
+
 ## Reporting Vulnerabilities {#reporting-vulnerabilities}
 
 When a vulnerability is reported, it immediately becomes our top concern, with a full-time contributor dropping everything to work on it. To report a vulnerability, please email [security@vuejs.org](mailto:security@vuejs.org).
