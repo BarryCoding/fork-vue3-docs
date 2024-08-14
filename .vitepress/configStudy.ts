@@ -250,6 +250,10 @@ export const seniorSidebarGroup: SidebarGroup[] = [
       {
         text: 'Error Handling',
         link: '/senior/best/error-api'
+      },
+      {
+        text: 'Performance',
+        link: '/senior/best/performance'
       }
     ]
   },
