@@ -230,6 +230,22 @@ export const seniorSidebarGroup: SidebarGroup[] = [
       {
         text: 'State Management',
         link: '/senior/best/state-management'
+      },
+      {
+        text: 'Pinia',
+        link: '/senior/best/pinia'
+      },
+      {
+        text: 'Pinia State',
+        link: '/senior/best/pinia-state'
+      },
+      {
+        text: 'Pinia Getters',
+        link: '/senior/best/pinia-getters'
+      },
+      {
+        text: 'Pinia Actions',
+        link: '/senior/best/pinia-actions'
       }
     ]
   },
