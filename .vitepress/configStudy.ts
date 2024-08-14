@@ -246,6 +246,10 @@ export const seniorSidebarGroup: SidebarGroup[] = [
       {
         text: 'Pinia Actions',
         link: '/senior/best/pinia-actions'
+      },
+      {
+        text: 'Error Handling',
+        link: '/senior/best/error-api'
       }
     ]
   },
