@@ -4,6 +4,10 @@ import { VTCodeGroup, VTCodeGroupTab } from '@vue/theme'
 
 # Testing {#testing}
 
+:::tip
+Exam TIP You will NOT have to write any tests yourself on the exam but be prepared to answer some conceptual Multiple Choice Questions about various types of unit tests. Also be prepared to recognize some basic testing syntax with Vitest and Vue Test Utils.
+:::
+
 ## Why Test? {#why-test}
 
 Automated tests help you and your team build complex Vue applications quickly and **confidently** by preventing regressions and encouraging you to break apart your application into testable functions, modules, classes, and components. As with any application, your new Vue app can break in many ways, and it's important that you can catch these issues and fix them before releasing.

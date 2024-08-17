@@ -270,6 +270,14 @@ export const seniorSidebarGroup: SidebarGroup[] = [
       {
         text: 'Testing',
         link: '/senior/best/testing'
+      },
+      {
+        text: 'Vitest',
+        link: '/senior/best/vitest'
+      },
+      {
+        text: 'Vue Test Utils',
+        link: '/senior/best/vue-test-utils'
       }
     ]
   },
