@@ -305,6 +305,40 @@ import type { ComponentPublicInstance } from 'vue'
 const child = ref<ComponentPublicInstance | null>(null)
 ```
 
+In cases where the component referenced is a [generic component](/guide/typescript/overview.html#generic-components), for instance `MyGenericModal`:
+
+```vue
+<!-- MyGenericModal.vue -->
+<script setup lang="ts" generic="ContentType extends string | number">
+import { ref } from 'vue'
+
+const content = ref<ContentType | null>(null)
+
+const open = (newContent: ContentType) => (content.value = newContent)
+
+defineExpose({
+  open
+})
+</script>
+```
+
+It needs to be referenced using `ComponentExposed` from the [`vue-component-type-helpers`](https://www.npmjs.com/package/vue-component-type-helpers) library as `InstanceType` won't work.
+
+```vue
+<!-- App.vue -->
+<script setup lang="ts">
+import MyGenericModal from './MyGenericModal.vue'
+
+import type { ComponentExposed } from 'vue-component-type-helpers';
+
+const modal = ref<ComponentExposed<typeof MyModal> | null>(null)
+
+const openModal = () => {
+  modal.value?.open('newValue')
+}
+</script>
+```
+
 ## Typing Provide / Inject {#typing-provide-inject}
 
 Provide and inject are usually performed in separate components. To properly type injected values, Vue provides an `InjectionKey` interface, which is a generic type that extends `Symbol`. It can be used to sync the type of the injected value between the provider and the consumer:
