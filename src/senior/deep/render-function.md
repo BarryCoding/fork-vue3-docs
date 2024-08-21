@@ -121,7 +121,7 @@ export default {
 }
 ```
 
-:::tip
+:::danger
 Make sure to return a function instead of directly returning values! The `setup()` function is called only once per component, while the returned render function will be called multiple times.
 :::
 
@@ -175,7 +175,7 @@ Inside JSX expressions, use curly braces to embed dynamic values:
 const vnode = <div id={dynamicId}>hello, {userName}</div>
 ```
 
-`create-vue` and Vue CLI both have options for scaffolding projects with pre-configured JSX support.
+`create-vue` has options for scaffolding projects with pre-configured JSX support.
 
 Although first introduced by React, JSX actually has no defined runtime semantics and can be compiled into various different outputs. If you have worked with JSX before, do note that **Vue JSX transform is different from React's JSX transform**, so you can't use React's JSX transform in Vue applications. Some notable differences from React JSX include:
 

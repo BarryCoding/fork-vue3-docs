@@ -171,6 +171,10 @@ export const seniorNavItem: NavItem = {
         {
           text: 'Best Practice',
           link: '/senior/best/composables'
+        },
+        {
+          text: 'Deeper Dive',
+          link: '/senior/deep/reactivity-in-depth'
         }
       ]
     }
@@ -284,22 +288,21 @@ export const seniorSidebarGroup: SidebarGroup[] = [
   {
     text: 'Deeper Dive',
     items: [
-      // reactivity in depth
       {
         text: 'Reactivity In Depth',
-        link: '/senior/best/reactivity-in-depth'
+        link: '/senior/deep/reactivity-in-depth'
       },
       {
         text: 'Rendering Mechanism',
-        link: '/senior/components/rendering-mechanism'
+        link: '/senior/deep/rendering-mechanism'
       },
       {
         text: 'Render Function & JSX',
-        link: '/senior/components/render-function'
+        link: '/senior/deep/render-function'
       },
       {
         text: 'Render Function API',
-        link: '/senior/components/render-function-copy'
+        link: '/senior/deep/render-function-api'
       }
     ]
   }
