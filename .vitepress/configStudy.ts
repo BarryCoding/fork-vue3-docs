@@ -177,6 +177,11 @@ export const seniorNavItem: NavItem = {
           link: '/senior/deep/reactivity-in-depth'
         }
       ]
+    },
+    // TODO: RepoStars
+    {
+      text: 'Github Stars',
+      items: [{ text: 'Repo Stars 10K+', link: '/senior/github-stars' }]
     }
   ]
 }
