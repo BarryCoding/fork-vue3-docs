@@ -228,7 +228,7 @@ Converts a reactive object to a plain object where each property of the resultin
   const { foo, bar } = useFeatureX()
   ```
 
-  `toRefs` will only generate refs for properties that are enumerable on the source object at call time. To create a ref for (optional property:) a property that may not exist yet, use [`toRef`](#toref) instead.
+  `toRefs` will only generate refs for properties that are enumerable on the source object at call time. To create a ref for optional property, a property that may not exist yet, use [`toRef`](#toref) instead.
 
 ## isProxy() {#isproxy}
 

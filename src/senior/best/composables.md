@@ -191,7 +191,7 @@ const { data, error } = useFetch(url)
 url.value = '/new-url'
 ```
 
-Or, accept a [getter function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get#description):
+Or, accept a [getter function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get#description), a useful way to pass props to composables:
 
 ```js
 // re-fetch when props.id changes
@@ -273,18 +273,6 @@ const { x, y } = useMouse()
 
 Returning a reactive object from a composable will cause such destructions to lose the reactivity connection to the state inside the composable, while the refs will retain that connection.
 
-If you prefer to use returned state from composables as object properties, you can wrap the returned object with `reactive()` so that the refs are unwrapped. For example:
-
-```js
-const mouse = reactive(useMouse())
-// mouse.x is linked to original ref
-console.log(mouse.x)
-```
-
-```vue-html
-Mouse position is at: {{ mouse.x }}, {{ mouse.y }}
-```
-
 ### Side Effects {#side-effects}
 
 It is OK to perform side effects (e.g. adding DOM event listeners or fetching data) in composables, but pay attention to the following rules:
@@ -324,31 +312,6 @@ const { qux } = useFeatureC(baz)
 ```
 
 To some extent, you can think of these extracted composables as component-scoped services that can talk to one another.
-
-<details>
-<summary>Using Composables in Options API</summary>
-
-If you are using Options API, composables must be called inside `setup()`, and the returned bindings must be returned from `setup()` so that they are exposed to `this` and the template:
-
-```js
-import { useMouse } from './mouse.js'
-import { useFetch } from './fetch.js'
-
-export default {
-  setup() {
-    const { x, y } = useMouse()
-    const { data, error } = useFetch('...')
-    return { x, y, data, error }
-  },
-  mounted() {
-    // setup() exposed properties can be accessed on `this`
-    console.log(this.x)
-  }
-  // ...other options
-}
-```
-
-</details>
 
 ## Comparisons with Other Techniques {#comparisons-with-other-techniques}
 
