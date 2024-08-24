@@ -28,13 +28,9 @@ When designing your Vue application's testing strategy, you should leverage the 
 
 Each testing type plays a role in your application's testing strategy, and each will protect you against different types of issues.
 
-## Overview {#overview}
-
-We will briefly discuss what each of these are, how they can be implemented for Vue applications, and provide some general recommendations.
-
 ## Unit Testing {#unit-testing}
 
-Unit tests are written to verify that small, isolated units of code are working as expected. A unit test usually covers a single function, class, composable, or module. Unit tests focus on logical correctness and only concern themselves with a small portion of the application's overall functionality. They may mock large parts of your application's environment (e.g. initial state, complex classes, 3rd party modules, and network requests).
+Unit tests are written to verify that small, isolated units of code are working as expected. A unit test usually covers a single function, class, composable, or module. Unit tests focus on **logical** correctness and only concern themselves with a small portion of the application's overall functionality. They may mock large parts of your application's environment (e.g. initial state, complex classes, 3rd party modules, and network requests).
 
 In general, unit tests will catch issues with a function's business logic and logical correctness.
 
@@ -73,16 +69,16 @@ describe('increment', () => {
 })
 ```
 
-As mentioned previously, unit testing is typically applied to self-contained business logic, components, classes, modules, or functions that do not involve UI rendering, network requests, or other environmental concerns.
+As mentioned previously, unit testing is typically applied to **self-contained** business logic, components, classes, modules, or functions that do not involve UI rendering, network requests, or other environmental concerns.
 
-These are typically plain JavaScript / TypeScript modules unrelated to Vue. In general, writing unit tests for business logic in Vue applications does not differ significantly from applications using other frameworks.
+These are typically plain TypeScript modules unrelated to Vue. In general, writing unit tests for business logic in Vue applications does not differ significantly from applications using other frameworks.
 
 There are two instances where you DO unit test Vue-specific features:
 
 1. Composables
 2. Components
 
-### Composables {#composables}
+### Unit Testing Composables {#composables}
 
 One category of functions specific to Vue applications is [Composables](/guide/reusability/composables), which may require special handling during tests.
 See [Testing Composables](#testing-composables) below for more details.
@@ -189,9 +185,9 @@ Component tests **should focus on** the component's **public interfaces** rather
 
 - **DON'T**
 
-  Don't assert the private state of a component instance or test the private methods of a component. Testing implementation details makes the tests brittle, as they are more likely to break and require updates when the implementation changes.
+  Don't assert the **private state** of a component instance or test the **private methods** of a component. Testing implementation details makes the tests brittle, as they are more likely to break and require updates when the implementation changes.
 
-  The component's ultimate job is rendering the correct DOM output, so tests focusing on the DOM output provide the same level of correctness assurance (if not more) while being more robust and resilient to change.
+  The component's ultimate job is rendering the correct DOM output, so tests **focusing on the DOM output** provide the same level of correctness assurance (if not more) while being more robust and resilient to change.
 
   Don't rely exclusively on snapshot tests. Asserting HTML strings does not describe correctness. Write tests with intentionality.
 
@@ -252,6 +248,10 @@ When end-to-end (E2E) tests are run in continuous integration/deployment pipelin
 - [Cypress](https://www.cypress.io/)
 
   Overall, we believe Cypress provides the most complete E2E solution with features like an informative graphical interface, excellent debuggability, built-in assertions, stubs, flake-resistance, parallelization, and snapshots. As mentioned above, it also provides support for [Component Testing](https://docs.cypress.io/guides/component-testing/introduction). It supports Chromium-based browsers, Firefox, and Electron. WebKit support is available, but marked experimental.
+
+### Other Options {#other-options-2}
+
+- [Playwright](https://playwright.dev/) is also a great E2E testing solution that supports all modern rendering engines including Chromium, WebKit, and Firefox. Test on Windows, Linux, and macOS, locally or on CI, headless or headed with native mobile emulation of Google Chrome for Android and Mobile Safari.
 
 ## Recipes {#recipes}
 

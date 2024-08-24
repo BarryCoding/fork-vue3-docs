@@ -245,11 +245,9 @@ test('creates a todo', async () => {
 
 The test is split into three distinct stages, separated by new lines. The three stages represent the three phases of a test: **arrange**, **act** and **assert**.
 
-In the _arrange_ phase, we are setting up the scenario for the test. A more complex example may require creating a Vuex store, or populating a database.
-
-In the _act_ phase, we act out the scenario, simulating how a user would interact with the component or application.
-
-In the _assert_ phase, we make assertions about how we expect the current state of the component to be.
+1. In the _arrange_ phase, we are setting up the scenario for the test. A more complex example may require creating a Vuex store, or populating a database.
+2. In the _act_ phase, we act out the scenario, simulating how a user would interact with the component or application.
+3. In the _assert_ phase, we make assertions about how we expect the current state of the component to be.
 
 Almost all test will follow these three phases. You don't need to separate them with new lines like this guide does, but it is good to keep these three phases in mind as you write your tests.
 
@@ -259,4 +257,5 @@ Almost all test will follow these three phases. You don't need to separate them 
 - Use `get()` and `findAll()` to query the DOM.
 - `trigger()` and `setValue()` are helpers to simulate user input.
 - Updating the DOM is an async operation, so make sure to use `async` and `await`.
-- Testing usually consists of 3 phases; arrange, act and assert.
+- Testing usually consists of 3 phases; 
+  - arrange, act and assert.
