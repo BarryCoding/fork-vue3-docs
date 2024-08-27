@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+// import { onMounted } from 'vue'
 // import SiteMap from './SiteMap.vue'
 // import NewsLetter from './NewsLetter.vue'
-import { load, data, base } from './sponsors'
+// import { load, data, base } from './sponsors'
 // import SponsorsGroup from './SponsorsGroup.vue'
 import VueMasteryModal from './VueMasteryModal.vue'
 
-onMounted(load)
+// onMounted(load)
 </script>
 
 <template>

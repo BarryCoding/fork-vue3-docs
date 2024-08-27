@@ -604,13 +604,13 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
     ['meta', { name: 'twitter:site', content: '@vuejs' }],
     ['meta', { name: 'twitter:card', content: 'summary' }],
-    [
-      'link',
-      {
-        rel: 'preconnect',
-        href: 'https://sponsors.vuejs.org'
-      }
-    ],
+    // [
+    //   'link',
+    //   {
+    //     rel: 'preconnect',
+    //     href: 'https://sponsors.vuejs.org'
+    //   }
+    // ],
     [
       'script',
       {},
