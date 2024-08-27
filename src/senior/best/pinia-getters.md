@@ -54,9 +54,8 @@ const store = useCounterStore()
 
 As with computed properties, you can combine multiple getters. Access any other getter via `this`. In this scenario, **you will need to specify a return type** for the getter.
 
-::: code-group
 
-```ts [counterStore.ts]
+```ts
 export const useCounterStore = defineStore('counter', {
   state: () => ({
     count: 0,
@@ -71,32 +70,6 @@ export const useCounterStore = defineStore('counter', {
   },
 })
 ```
-
-```js [counterStore.js]
-// You can use JSDoc (https://jsdoc.app/tags-returns.html) in JavaScript
-export const useCounterStore = defineStore('counter', {
-  state: () => ({
-    count: 0,
-  }),
-  getters: {
-    // type is automatically inferred because we are not using `this`
-    doubleCount: (state) => state.count * 2,
-    // here we need to add the type ourselves (using JSDoc in JS). We can also
-    // use this to document the getter
-    /**
-     * Returns the count value times two plus one.
-     *
-     * @returns {number}
-     */
-    doubleCountPlusOne() {
-      // autocompletion ✨
-      return this.doubleCount + 1
-    },
-  },
-})
-```
-
-:::
 
 ## Passing arguments to getters
 
