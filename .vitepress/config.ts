@@ -9,12 +9,15 @@ import {
   studyNavItem,
   studySidebarGroup,
   seniorNavItem,
-  seniorSidebarGroup
+  seniorSidebarGroup,
+  moreNavItem,
+  moreSidebarGroup
 } from './configStudy'
 
 const nav: ThemeConfig['nav'] = [
   studyNavItem,
   seniorNavItem,
+  moreNavItem,
   {
     text: 'Docs',
     activeMatch: `^/(guide|style-guide|cookbook|examples)/`,
@@ -142,6 +145,7 @@ const nav: ThemeConfig['nav'] = [
 export const sidebar: ThemeConfig['sidebar'] = {
   '/study/': studySidebarGroup,
   '/senior/': seniorSidebarGroup,
+  '/custom/more/': moreSidebarGroup,
   '/guide/': [
     {
       text: 'Getting Started',

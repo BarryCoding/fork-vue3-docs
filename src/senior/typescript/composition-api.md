@@ -275,9 +275,7 @@ import { ref } from 'vue'
 const isContentShown = ref(false)
 const open = () => (isContentShown.value = true)
 
-defineExpose({
-  open
-})
+defineExpose({ open })
 </script>
 ```
 
@@ -316,9 +314,7 @@ const content = ref<ContentType | null>(null)
 
 const open = (newContent: ContentType) => (content.value = newContent)
 
-defineExpose({
-  open
-})
+defineExpose({ open })
 </script>
 ```
 
@@ -331,7 +327,7 @@ import MyGenericModal from './MyGenericModal.vue'
 
 import type { ComponentExposed } from 'vue-component-type-helpers';
 
-const modal = ref<ComponentExposed<typeof MyModal> | null>(null)
+const modal = ref<ComponentExposed<typeof MyGenericModal> | null>(null)
 
 const openModal = () => {
   modal.value?.open('newValue')

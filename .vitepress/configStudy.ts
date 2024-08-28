@@ -18,20 +18,16 @@ export const studyNavItem: NavItem = {
     {
       text: 'Ecosystem',
       items: [
+        { text: 'Vue 3 Documentation', link: 'https://v3.vuejs.org/' },
         {
-          text: 'IDE Extension',
+          text: 'VS Code Extension',
           link: 'https://github.com/vuejs/language-tools'
         },
-        { text: 'Vue Router', link: 'https://github.com/vuejs/router' },
-        { text: 'Pinia', link: 'https://github.com/vuejs/pinia' },
-        { text: 'VueUse', link: 'https://github.com/vueuse/vueuse' },
         {
           text: 'Vue Devtools',
           link: 'https://github.com/vuejs/devtools-next'
         },
-        { text: 'Vuetify', link: 'https://github.com/vuetifyjs/vuetify' },
-
-        { text: 'Nuxt', link: 'https://github.com/nuxt/nuxt' }
+        { text: 'Vue Router', link: 'https://github.com/vuejs/router' }
       ]
     }
   ]
@@ -39,7 +35,7 @@ export const studyNavItem: NavItem = {
 
 export const studySidebarGroup: SidebarGroup[] = [
   {
-    text: 'Essentials 2nd',
+    text: 'Essentials',
     items: [
       { text: 'Overview', link: '/study/overview' },
       {
@@ -96,10 +92,6 @@ export const studySidebarGroup: SidebarGroup[] = [
         link: '/study/components/sfc'
       },
       {
-        text: 'Ex Registration',
-        link: '/study/components/registration'
-      },
-      {
         text: 'Lifecycle Hooks',
         link: '/study/components/lifecycle'
       },
@@ -125,32 +117,28 @@ export const studySidebarGroup: SidebarGroup[] = [
         link: '/study/intermediate/template-refs'
       },
       {
+        text: 'Custom Directives',
+        link: '/study/intermediate/custom-directives'
+      },
+      {
+        text: 'Plugins',
+        link: '/study/intermediate/plugins'
+      }
+    ]
+  },
+  {
+    text: 'Build-in Components',
+    items: [
+      {
         text: 'Transition',
         link: '/study/intermediate/transition'
       },
       {
         text: 'TransitionGroup',
         link: '/study/intermediate/transition-group'
-      },
-      {
-        text: 'Plugins',
-        link: '/study/intermediate/plugins'
-      },
-      {
-        text: 'Custom Directives',
-        link: '/study/intermediate/custom-directives'
       }
     ]
   }
-  // {
-  //   text: 'Ecosystem',
-  //   items: [
-  //     {
-  //       text: 'Vue Router',
-  //       link: '/study/ecosystem/vue-router'
-  //     }
-  //   ]
-  // }
 ]
 
 export const seniorNavItem: NavItem = {
@@ -165,7 +153,7 @@ export const seniorNavItem: NavItem = {
           link: '/senior/components/v-model'
         },
         {
-          text: 'Typescript',
+          text: 'Typescript Vue',
           link: '/senior/typescript/overview'
         },
         {
@@ -173,15 +161,21 @@ export const seniorNavItem: NavItem = {
           link: '/senior/best/composables'
         },
         {
+          text: 'Testing',
+          link: '/senior/best/testing'
+        },
+        {
           text: 'Deeper Dive',
           link: '/senior/deep/reactivity-in-depth'
         }
       ]
     },
-    // TODO: RepoStars
     {
-      text: 'Github Stars',
-      items: [{ text: 'Repo Stars 10K+', link: '/senior/github-stars' }]
+      text: 'Ecosystem',
+      items: [
+        { text: 'Pinia', link: 'https://github.com/vuejs/pinia' },
+        { text: 'VueUse', link: 'https://github.com/vueuse/vueuse' }
+      ]
     }
   ]
 }
@@ -197,10 +191,6 @@ export const seniorSidebarGroup: SidebarGroup[] = [
       {
         text: 'Events',
         link: '/senior/components/events'
-      },
-      {
-        text: 'Ex Fallthrough Attributes',
-        link: '/senior/components/attrs'
       },
       {
         text: 'v-model',
@@ -240,22 +230,23 @@ export const seniorSidebarGroup: SidebarGroup[] = [
         text: 'State Management',
         link: '/senior/best/state-management'
       },
-      {
-        text: 'Pinia',
-        link: '/senior/best/pinia'
-      },
-      {
-        text: 'Pinia State',
-        link: '/senior/best/pinia-state'
-      },
-      {
-        text: 'Pinia Getters',
-        link: '/senior/best/pinia-getters'
-      },
-      {
-        text: 'Pinia Actions',
-        link: '/senior/best/pinia-actions'
-      },
+      // TODO: delete Pinia
+      // {
+      //   text: 'Pinia',
+      //   link: '/senior/best/pinia'
+      // },
+      // {
+      //   text: 'Pinia State',
+      //   link: '/senior/best/pinia-state'
+      // },
+      // {
+      //   text: 'Pinia Getters',
+      //   link: '/senior/best/pinia-getters'
+      // },
+      // {
+      //   text: 'Pinia Actions',
+      //   link: '/senior/best/pinia-actions'
+      // },
       {
         text: 'Error Handling',
         link: '/senior/best/error-api'
@@ -271,13 +262,14 @@ export const seniorSidebarGroup: SidebarGroup[] = [
       {
         text: 'SSR',
         link: '/senior/best/ssr'
-      },
+      }
+    ]
+  },
+  {
+    text: 'Tests',
+    items: [
       {
-        text: 'Tooling',
-        link: '/senior/best/tooling'
-      },
-      {
-        text: 'Testing',
+        text: 'Testing Fundamentals',
         link: '/senior/best/testing'
       },
       {
@@ -308,6 +300,131 @@ export const seniorSidebarGroup: SidebarGroup[] = [
       {
         text: 'Render Function API',
         link: '/senior/deep/render-function-api'
+      }
+    ]
+  }
+]
+
+export const moreNavItem: NavItem = {
+  text: 'More',
+  activeMatch: `^/custom/more/`,
+  items: [
+    {
+      text: 'Github Awesome',
+      items: [
+        { text: 'Repo Stars 10K+', link: '/custom/more/github-stars' }
+      ]
+    },
+    {
+      text: 'More Concepts',
+      items: [
+        {
+          text: 'Component',
+          link: '/senior/components/v-model'
+        },
+        {
+          text: 'Build-in Components',
+          link: '/senior/typescript/overview'
+        },
+        {
+          text: 'Extra Topics',
+          link: '/senior/best/composables'
+        },
+        {
+          text: 'Style Guild',
+          link: '/custom/more/style-guide/rules-essential'
+        }
+      ]
+    },
+    {
+      text: 'Ecosystem',
+      items: [
+        { text: 'Vite', link: 'https://github.com/vitejs/vite' },
+        { text: 'Vitepress', link: 'https://github.com/vuejs/vitepress' },
+        { text: 'Nuxt', link: 'https://github.com/nuxt/nuxt' }
+      ]
+    }
+  ]
+}
+
+export const moreSidebarGroup: SidebarGroup[] = [
+  {
+    text: 'More on Components',
+    items: [
+      {
+        text: 'Registration',
+        link: '/custom/more/components/registration'
+      },
+      {
+        text: 'Fallthrough Attributes',
+        link: '/custom/more/components/attrs'
+      }
+    ]
+  },
+  {
+    text: 'Build-in Components',
+    items: [
+      {
+        text: 'TODO KeepAlive',
+        link: '/study/intermediate/transition'
+      },
+      {
+        text: 'TODO Suspense',
+        link: '/study/intermediate/transition'
+      },
+      {
+        text: 'TODO Teleport',
+        link: '/study/intermediate/transition-group'
+      }
+    ]
+  },
+  {
+    text: 'Extra Topics',
+    items: [
+      {
+        text: 'TODO Ways of Using Vue',
+        link: '/study/essentials/bootstrap'
+      },
+      {
+        text: 'Tooling',
+        link: '/custom/more/extra/tooling'
+      },
+      {
+        text: 'TODO Deployment',
+        link: '/senior/best/tooling'
+      },
+      {
+        text: 'TODO Accessibility',
+        link: '/senior/best/tooling'
+      },
+      {
+        text: 'TODO Web Component',
+        link: '/senior/best/tooling'
+      },
+      {
+        text: 'TODO Animation',
+        link: '/senior/best/tooling'
+      }
+    ]
+  },
+  {
+    text: 'Style Guide',
+    items: [
+      {
+        text: 'Priority A',
+        link: '/custom/more/style-guide/rules-essential'
+      },
+      {
+        text: 'Priority B',
+        link: '/custom/more/style-guide/rules-strongly-recommended'
+      },
+      {
+        text: 'Priority C',
+        link: '/custom/more/style-guide/rules-recommended'
+      },
+      {
+        text: 'Reasons to Get Fired',
+        link: '/custom/more/style-guide/rules-use-with-caution'
       }
     ]
   }
