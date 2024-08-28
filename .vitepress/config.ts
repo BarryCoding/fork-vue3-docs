@@ -635,14 +635,14 @@ export default defineConfigWithTheme<ThemeConfig>({
         'data-spa': 'auto',
         defer: ''
       }
-    ],
-    [
-      'script',
-      {
-        src: 'https://vueschool.io/banner.js?affiliate=vuejs&type=top',
-        async: 'true'
-      }
     ]
+    // [
+    //   'script',
+    //   {
+    //     src: 'https://vueschool.io/banner.js?affiliate=vuejs&type=top',
+    //     async: 'true'
+    //   }
+    // ]
   ],
 
   themeConfig: {
