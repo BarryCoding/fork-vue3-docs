@@ -58,6 +58,7 @@
 
 ## 9K
 
+- vue-echarts(9.6k): Vue.js component for Apache ECharts™.
 - soybean-admin(9.5k): 一个清新优雅、高颜值且功能强大的后台管理模板，基于最新的前端技术栈，包括 Vue3, Vite5, TypeScript, Pinia, NaiveUI 和 UnoCSS。
 
 ## 8K
@@ -66,16 +67,26 @@
 
 ## 7K
 
+- sentry-javascript(7.8): Official Sentry SDKs for JavaScript
+
 ## 6K
+
+- gridstack.js(6.5): Build interactive dashboards in minutes.
 
 ## 5k
 
+- wagmi(5.9k): Reactive primitives for Ethereum apps
 - Final2X(5.5k): 2^x Image Super-Resolution
 
 ## 4k
 
+- formkit(4.2): Vue Forms ⚡️ Supercharged
+- shadcn-vue(4)
+
 ## 3k
 
+- i18n-ally(3.9)
+- router(3.8)
 - unplugin-vue-components(3.7k) On-demand components auto importing for Vue
 - nuxt-ui(3.7)
 - create-vue(3.6)

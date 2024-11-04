@@ -163,6 +163,8 @@ Will render:
 <span>This is a child component</span>
 ```
 
+TODO: composition api `useAttrs()`
+
 ## Binding Inline Styles {#binding-inline-styles}
 
 ### Binding to Objects {#binding-to-objects-1}

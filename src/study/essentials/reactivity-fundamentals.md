@@ -142,7 +142,7 @@ Further reading:
 
 ### DOM Update Timing {#dom-update-timing}
 
-When you mutate reactive state, the DOM is updated automatically. However, it should be noted that the DOM updates are not applied synchronously. Instead, Vue buffers them until the **next tick** in the update cycle to ensure that each component updates only once no matter how many state changes you have made.
+When you mutate reactive state, the DOM is updated automatically. However, it should be noted that **the DOM updates are not applied synchronously**. Instead, Vue buffers them until the **next tick** in the update cycle to ensure that each component updates only once no matter how many state changes you have made.
 
 To wait for the DOM update to complete after a state change, you can use the [nextTick()](/api/general#nexttick) global API:
 
@@ -255,7 +255,7 @@ The `reactive()` API has a few limitations:
    ```
 
 
-## Ex Ref Unwrapping Details \*\* {#additional-ref-unwrapping-details}
+## Ref Unwrapping Details \*\* {#additional-ref-unwrapping-details}
 
 ### As Reactive Object Property \*\* {#ref-unwrapping-as-reactive-object-property}
 

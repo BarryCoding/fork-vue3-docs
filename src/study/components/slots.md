@@ -244,6 +244,8 @@ When the header / footer / default is present we want to wrap them to provide ad
 </template>
 ```
 
+TODO: `useSlots()`
+
 ## Dynamic Slot Names {#dynamic-slot-names}
 
 [Dynamic directive arguments](/guide/essentials/template-syntax.md#dynamic-arguments) also work on `v-slot`, allowing the definition of dynamic slot names:

@@ -150,7 +150,11 @@ export const seniorNavItem: NavItem = {
       items: [
         {
           text: 'Advanced Component',
-          link: '/senior/components/v-model'
+          link: '/senior/components/props'
+        },
+        {
+          text: 'Deeper Dive',
+          link: '/senior/deep/reactivity-in-depth'
         },
         {
           text: 'Typescript Vue',
@@ -163,10 +167,6 @@ export const seniorNavItem: NavItem = {
         {
           text: 'Testing',
           link: '/senior/best/testing'
-        },
-        {
-          text: 'Deeper Dive',
-          link: '/senior/deep/reactivity-in-depth'
         }
       ]
     },
@@ -199,6 +199,27 @@ export const seniorSidebarGroup: SidebarGroup[] = [
       {
         text: 'Provide / Inject',
         link: '/senior/components/provide-inject'
+      }
+    ]
+  },
+  {
+    text: 'Deeper Dive',
+    items: [
+      {
+        text: 'Reactivity In Depth',
+        link: '/senior/deep/reactivity-in-depth'
+      },
+      {
+        text: 'Rendering Mechanism',
+        link: '/senior/deep/rendering-mechanism'
+      },
+      {
+        text: 'Render Function & JSX',
+        link: '/senior/deep/render-function'
+      },
+      {
+        text: 'Render Function API',
+        link: '/senior/deep/render-function-api'
       }
     ]
   },
@@ -279,27 +300,6 @@ export const seniorSidebarGroup: SidebarGroup[] = [
       {
         text: 'Vue Test Utils',
         link: '/senior/best/vue-test-utils'
-      }
-    ]
-  },
-  {
-    text: 'Deeper Dive',
-    items: [
-      {
-        text: 'Reactivity In Depth',
-        link: '/senior/deep/reactivity-in-depth'
-      },
-      {
-        text: 'Rendering Mechanism',
-        link: '/senior/deep/rendering-mechanism'
-      },
-      {
-        text: 'Render Function & JSX',
-        link: '/senior/deep/render-function'
-      },
-      {
-        text: 'Render Function API',
-        link: '/senior/deep/render-function-api'
       }
     ]
   }

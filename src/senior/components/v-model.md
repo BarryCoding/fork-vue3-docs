@@ -1,4 +1,4 @@
-# Component v-model Repeat {#component-v-model}
+# Component v-model {#component-v-model}
 
 ## Basic Usage <sup class="vt-badge" data-text="3.4+" /> {#basic-usage}
 
