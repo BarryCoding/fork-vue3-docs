@@ -4,6 +4,7 @@ import { defineConfigWithTheme } from 'vitepress'
 import type { Config as ThemeConfig } from '@vue/theme'
 import baseConfig from '@vue/theme/config'
 import { headerPlugin } from './headerMdPlugin'
+import { tsNavItem, tsSidebarGroup } from './configs/typescript'
 import {
   studyNavItem,
   studySidebarGroup,
@@ -14,6 +15,7 @@ import {
 } from './configStudy'
 
 const nav: ThemeConfig['nav'] = [
+  tsNavItem,
   studyNavItem,
   seniorNavItem,
   moreNavItem,
@@ -46,6 +48,7 @@ const nav: ThemeConfig['nav'] = [
 ]
 
 export const sidebar: ThemeConfig['sidebar'] = {
+  '/typescript/': tsSidebarGroup,
   '/study/': studySidebarGroup,
   '/senior/': seniorSidebarGroup,
   '/custom/more/': moreSidebarGroup,
