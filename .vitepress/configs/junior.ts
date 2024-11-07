@@ -3,19 +3,19 @@ import type {
   SidebarGroup
 } from '@vue/theme/src/vitepress/config.js'
 
-export const TS_PATH = '/custom/typescript/'
+export const JUNIOR_PATH = '/custom/junior/'
 
 export const tsNavItem: NavItem = {
-  text: 'Typescript',
-  activeMatch: `^${TS_PATH}`,
+  text: 'Junior',
+  activeMatch: `^${JUNIOR_PATH}`,
   items: [
     {
-      text: 'Vue 3 + Typescript',
+      text: 'Vue 3 + Junior',
       items: [
-        { text: 'Overview', link: TS_PATH + 'overview' },
+        { text: 'Overview', link: JUNIOR_PATH + 'overview' },
         {
           text: 'Vue Typing Guide',
-          link: TS_PATH + 'composition-api/props'
+          link: JUNIOR_PATH + 'composition-api/props'
         }
       ]
     }
@@ -25,42 +25,42 @@ export const tsNavItem: NavItem = {
 export const tsSidebarGroup: SidebarGroup[] = [
   {
     text: 'Get Started',
-    items: [{ text: 'Overview', link: TS_PATH + 'overview' }]
+    items: [{ text: 'Overview', link: JUNIOR_PATH + 'overview' }]
   },
   {
     text: 'Vue Typing Guide',
     items: [
       {
         text: 'Component props',
-        link: TS_PATH + 'composition-api/props'
+        link: JUNIOR_PATH + 'composition-api/props'
       },
       {
         text: 'Component emits',
-        link: TS_PATH + 'composition-api/emits'
+        link: JUNIOR_PATH + 'composition-api/emits'
       },
       {
         text: 'State ref()',
-        link: TS_PATH + 'composition-api/ref'
+        link: JUNIOR_PATH + 'composition-api/ref'
       },
       {
         text: 'State reactive()',
-        link: TS_PATH + 'composition-api/reactive'
+        link: JUNIOR_PATH + 'composition-api/reactive'
       },
       {
         text: 'State computed()',
-        link: TS_PATH + 'composition-api/computed'
+        link: JUNIOR_PATH + 'composition-api/computed'
       },
       {
         text: 'Event Handler',
-        link: TS_PATH + 'composition-api/event-handler'
+        link: JUNIOR_PATH + 'composition-api/event-handler'
       },
       {
         text: 'Provide / Inject',
-        link: TS_PATH + 'composition-api/provide-inject'
+        link: JUNIOR_PATH + 'composition-api/provide-inject'
       },
       {
         text: 'Template Ref',
-        link: TS_PATH + 'composition-api/template-ref'
+        link: JUNIOR_PATH + 'composition-api/template-ref'
       }
     ]
   }

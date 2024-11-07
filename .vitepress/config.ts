@@ -4,7 +4,7 @@ import { defineConfigWithTheme } from 'vitepress'
 import type { Config as ThemeConfig } from '@vue/theme'
 import baseConfig from '@vue/theme/config'
 import { headerPlugin } from './headerMdPlugin'
-import { tsNavItem, tsSidebarGroup } from './configs/typescript'
+import { tsNavItem, tsSidebarGroup, TS_PATH } from './configs/typescript'
 import {
   studyNavItem,
   studySidebarGroup,
@@ -48,7 +48,7 @@ const nav: ThemeConfig['nav'] = [
 ]
 
 export const sidebar: ThemeConfig['sidebar'] = {
-  '/typescript/': tsSidebarGroup,
+  [TS_PATH]: tsSidebarGroup,
   '/study/': studySidebarGroup,
   '/senior/': seniorSidebarGroup,
   '/custom/more/': moreSidebarGroup,
@@ -243,14 +243,6 @@ export const sidebar: ThemeConfig['sidebar'] = {
           text: 'Animation Techniques',
           link: '/guide/extras/animation'
         }
-        // {
-        //   text: 'Building a Library for Vue',
-        //   link: '/guide/extras/building-a-library'
-        // },
-        // {
-        //   text: 'Vue for React Devs',
-        //   link: '/guide/extras/vue-for-react-devs'
-        // }
       ]
     }
   ],
