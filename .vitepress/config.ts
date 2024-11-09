@@ -6,6 +6,11 @@ import baseConfig from '@vue/theme/config'
 import { headerPlugin } from './headerMdPlugin'
 import { tsNavItem, tsSidebarGroup, TS_PATH } from './configs/typescript'
 import {
+  juniorNavItem,
+  juniorSidebarGroup,
+  JUNIOR_PATH
+} from './configs/junior'
+import {
   studyNavItem,
   studySidebarGroup,
   seniorNavItem,
@@ -16,6 +21,7 @@ import {
 
 const nav: ThemeConfig['nav'] = [
   tsNavItem,
+  juniorNavItem,
   studyNavItem,
   seniorNavItem,
   moreNavItem,
@@ -49,6 +55,7 @@ const nav: ThemeConfig['nav'] = [
 
 export const sidebar: ThemeConfig['sidebar'] = {
   [TS_PATH]: tsSidebarGroup,
+  [JUNIOR_PATH]: juniorSidebarGroup,
   '/study/': studySidebarGroup,
   '/senior/': seniorSidebarGroup,
   '/custom/more/': moreSidebarGroup,

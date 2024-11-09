@@ -5,63 +5,75 @@ import type {
 
 export const JUNIOR_PATH = '/custom/junior/'
 
-export const tsNavItem: NavItem = {
+export const juniorNavItem: NavItem = {
   text: 'Junior',
   activeMatch: `^${JUNIOR_PATH}`,
   items: [
     {
-      text: 'Vue 3 + Junior',
+      text: 'Junior Developer',
       items: [
         { text: 'Overview', link: JUNIOR_PATH + 'overview' },
-        {
-          text: 'Vue Typing Guide',
-          link: JUNIOR_PATH + 'composition-api/props'
-        }
+        { text: 'Essentials', link: JUNIOR_PATH + 'essentials/bootstrap' }
       ]
     }
   ]
 }
 
-export const tsSidebarGroup: SidebarGroup[] = [
+export const juniorSidebarGroup: SidebarGroup[] = [
   {
-    text: 'Get Started',
-    items: [{ text: 'Overview', link: JUNIOR_PATH + 'overview' }]
+    text: 'Bird View',
+    items: [
+      // { text: 'Overview', link: JUNIOR_PATH + 'overview' },
+      {
+        text: 'Quick Start',
+        link: JUNIOR_PATH + 'quick-start'
+      },
+      {
+        text: 'Composition API Locked',
+        link: JUNIOR_PATH + 'composition-api-faq'
+      }
+    ]
   },
+
   {
-    text: 'Vue Typing Guide',
+    text: 'Essentials',
     items: [
       {
-        text: 'Component props',
-        link: JUNIOR_PATH + 'composition-api/props'
+        text: 'Reactivity',
+        link: JUNIOR_PATH + 'essentials/reactivity-fundamentals'
       },
       {
-        text: 'Component emits',
-        link: JUNIOR_PATH + 'composition-api/emits'
+        text: 'Computed',
+        link: JUNIOR_PATH + 'essentials/computed'
       },
       {
-        text: 'State ref()',
-        link: JUNIOR_PATH + 'composition-api/ref'
+        text: 'Watcher',
+        link: JUNIOR_PATH + 'essentials/watchers'
       },
       {
-        text: 'State reactive()',
-        link: JUNIOR_PATH + 'composition-api/reactive'
+        text: 'Template Syntax',
+        link: JUNIOR_PATH + 'essentials/template-syntax'
       },
       {
-        text: 'State computed()',
-        link: JUNIOR_PATH + 'composition-api/computed'
+        text: 'Class and Style',
+        link: JUNIOR_PATH + 'essentials/class-and-style'
       },
       {
-        text: 'Event Handler',
-        link: JUNIOR_PATH + 'composition-api/event-handler'
+        text: 'Render Conditionally',
+        link: JUNIOR_PATH + 'essentials/conditional'
       },
       {
-        text: 'Provide / Inject',
-        link: JUNIOR_PATH + 'composition-api/provide-inject'
-      },
-      {
-        text: 'Template Ref',
-        link: JUNIOR_PATH + 'composition-api/template-ref'
+        text: 'Render List',
+        link: JUNIOR_PATH + 'essentials/list'
       }
+      // {
+      //   text: 'Handle Event',
+      //   link: JUNIOR_PATH + 'essentials/event-handling'
+      // },
+      // {
+      //   text: 'Form Input',
+      //   link: JUNIOR_PATH + 'essentials/forms'
+      // }
     ]
   }
 ]

@@ -4,7 +4,7 @@ import type {
 } from '@vue/theme/src/vitepress/config.js'
 
 export const studyNavItem: NavItem = {
-  text: 'Junior',
+  text: 'JuniorD',
   activeMatch: `^/study/`,
   items: [
     {
